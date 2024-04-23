@@ -3,7 +3,6 @@ languageCode: en-us
 title: Hawkeye-xb Blog
 paginate: 15
 theme: ['PaperMod']
-comments: true
 
 enableRobotsTXT: true
 buildDrafts: false
@@ -17,6 +16,7 @@ minify:
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: Hawkeye-xb Blog
+  comments: true
 
 services:
   googleAnalytics:
