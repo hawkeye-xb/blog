@@ -101,6 +101,22 @@ services:
 ![invalid domain config 2024-04-23 15.44.56.png](https://s2.loli.net/2024/04/23/RwspDPGBC1ZJWES.png)
 
 ### 评论功能
-🕊
+评论功能就挺仁者见仁智者见智的，有的并不喜欢开放在个人博客，只想安安静静写作。评论模块搭建也有不同的方式，这里给出集成速度快、简单的[giscus](https://giscus.app/zh-CN) 方式，利用的是Github Discussion功能，设置简单，永久免费~。其它优势可以参考[giscus网址](https://giscus.app/zh-CN)。
+#### 部署步骤
+1. 开通GitHub Discussions，具体就是在项目的settings 中把该项勾选上即可。（[github文档](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/enabling-or-disabling-github-discussions-for-a-repository)）
+1. 将项目设置为public，能被别人访问，获取到评论数据。如对项目有协议要求或者其它问题，可以考虑另外的方案。
+1. 将[giscus 安装](https://github.com/apps/giscus)到项目里面。
+1. 输入[giscus](https://giscus.app/zh-CN)网址中生成script信息（标题：启用 giscus）。
+1. 接入项目，这里PaperMod主题也给出了[配置方式](https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-features/#comments)。
+1. 生成的script代码复制到`layouts/partials/comments.html`
+1. 配置文件params增加comments: true, 如下：
+```yaml
+params:
+  comments: true
+```
+本地启动项目就能看到评论区域了。
 ### Google ads
-🕊
+ads接入好像是需要前提条件，先🕊一下。
+
+## 最后
+最后，麻雀虽小，五脏俱全了。前后包括趟坑，总共大概花了半天时间，按照步骤半小时也差不多啦。
