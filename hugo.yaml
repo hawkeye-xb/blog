@@ -3,6 +3,7 @@ languageCode: en-us
 title: Hawkeye-xb Blog
 paginate: 15
 theme: ['PaperMod']
+comments: true
 
 enableRobotsTXT: true
 buildDrafts: false
@@ -20,3 +21,9 @@ params:
 services:
   googleAnalytics:
     id: G-QE8H9VMTZ6
+
+markup:
+  tableOfContents:
+    endLevel: 3
+    ordered: false
+    startLevel: 2
