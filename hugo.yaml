@@ -1,8 +1,8 @@
 baseURL: https://hawkeye-xb.xyz/
 languageCode: en-us
-title: Hawkeye-xb Blog2
+title: Hawkeye-xb Blog
 paginate: 15
-theme: ["PaperMod"]
+theme: ['PaperMod']
 
 enableRobotsTXT: true
 buildDrafts: false
@@ -15,7 +15,7 @@ minify:
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: Hawkeye-xb Blog3
+  title: Hawkeye-xb Blog
 
 services:
   googleAnalytics:
