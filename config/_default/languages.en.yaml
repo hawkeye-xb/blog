@@ -1,0 +1,28 @@
+languageName: "English"
+contentDir: "content/en"
+menu:
+  main:
+    - identifier: archives
+      name: archives
+      url: /archives/
+      weight: 90
+    - identifier: categories
+      name: categories
+      url: /categories/
+      weight: 100
+    - identifier: tags
+      name: tags
+      url: /tags/
+      weight: 200
+    - identifier: search
+      name: search
+      url: /search/
+      weight: 300
+    - indentifier: about
+      name: about
+      url: /about/
+      weight: 500
+params:
+  homeInfoParams:
+    Content: >
+      👋 Welcome to Hawkeye-xb blog!
