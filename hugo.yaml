@@ -1,30 +1,111 @@
 baseURL: https://hawkeye-xb.xyz/
-languageCode: en-us
 title: Hawkeye-xb Blog
-paginate: 15
+paginate: 5
 theme: ['PaperMod']
 
+enableInlineShortcodes: true
 enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
 buildExpired: false
+enableEmoji: true
 
 minify:
   disableXML: true
   minifyOutput: true
 
+languages:
+  en:
+    languageName: "English"
+    contentDir: "content/en"
+    weight: 2
+    taxonomies:
+      category: categories
+      tag: tags
+      series: series
+    menu:
+      main:
+        - identifier: categories
+          name: categories
+          url: /categories/
+          weight: 10
+        - identifier: tags
+          name: tags
+          url: /tags/
+          weight: 20
+        - indentifier: about
+          name: about
+          url: /about/
+          weight: 50
+    params:
+      homeInfoParams:
+        Content: >
+          👋 Welcome to Hawkeye-xb blog!
+  zh:
+    languageName: "简体中文(chinese)"
+    contentDir: "content/zh"
+    weight: 1
+    taxonomies:
+      category: categories
+      tag: tags
+      series: series
+    menu:
+      main:
+        - identifier: categories
+          name: 类别
+          url: /categories/
+          weight: 10
+        - identifier: tags
+          name: 标签
+          url: /tags/
+          weight: 20
+        - indentifier: about
+          name: 关于我
+          url: /about/
+          weight: 50
+    params:
+      homeInfoParams:
+        Content: >
+          👋 欢迎来到Hawkeye-xb 的博客!
+
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: Hawkeye-xb Blog
-  comments: true
-  showtoc: true
-  tocopen: true
+  # title: Hawkeye-xb Blog
+  comments: true # 启用评论模块
+  displayFullLangName: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: true
+  ShowAllPagesInArchive: true
+  ShowPageNums: true
+  ShowToc: true
+  tocopen: true # 启用文章目录
+    
+  socialIcons:
+    - name: github
+      title: View Source on Github
+      url: "https://github.com/hawkeye-xb/blog"
+    # - name: Discord
+    #   title: Join discord community
+    #   url: "https://discord.gg/ahpmTvhVmp"
+    # - name: X
+    #   title: Share PaperMod on X/Twitter
+    #   url: "https://x.com/intent/tweet/?text=Checkout%20Hugo%20PaperMod%20%E2%9C%A8%0AA%20fast,%20clean,%20responsive%20Hugo%20theme.&url=https://github.com/adityatelange/hugo-PaperMod&hashtags=Hugo,PaperMod"
+    # - name: KoFi
+    #   title: Buy me a Ko-Fi :)
+    #   url: "https://ko-fi.com/adityatelange"
 
 services:
   googleAnalytics:
     id: G-QE8H9VMTZ6
 
 markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
   tableOfContents:
     endLevel: 3
     ordered: false
