@@ -1,10 +1,5 @@
 languageName: "English"
 contentDir: "content/en"
-weight: 2
-taxonomies:
-  category: categories
-  tag: tags
-  series: series
 menu:
   main:
     - identifier: archives

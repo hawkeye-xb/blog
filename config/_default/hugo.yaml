@@ -10,6 +10,11 @@ buildFuture: false
 buildExpired: false
 enableEmoji: true
 
+taxonomies:
+  category: categories
+  tag: tags
+  series: series
+
 minify:
   disableXML: true
   minifyOutput: true
