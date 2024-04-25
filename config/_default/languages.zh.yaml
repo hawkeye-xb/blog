@@ -6,22 +6,31 @@ menu:
       name: 归档
       url: /archives/
       weight: 90
-    - identifier: categories
-      name: 类别
-      url: /categories/
-      weight: 100
-    - identifier: tags
-      name: 标签
-      url: /tags/
-      weight: 200
+    # - identifier: categories
+    #   name: 类别
+    #   url: /categories/
+    #   weight: 100
+    # - identifier: tags
+    #   name: 标签
+    #   url: /tags/
+    #   weight: 200
     - identifier: search
       name: 搜索
       url: /search/
       weight: 300
-    - indentifier: about
-      name: 关于我
-      url: /about/
-      weight: 500
+    # - indentifier: other
+    #   name: 其它
+    #   url: /other
+    #   weight: 500
+    # - indentifier: about
+    #   name: 关于
+    #   url: /about/
+    #   parent: other
+    #   weight: 590
+    - indentifier: more
+      name: 更多
+      url: /more
+      weight: 900
 params:
   homeInfoParams:
     Content: >
