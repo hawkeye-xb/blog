@@ -117,8 +117,8 @@ services:
 1. 将[giscus 安装](https://github.com/apps/giscus)到项目里面。
 1. 输入[giscus](https://giscus.app/zh-CN)网址中生成script信息（标题：启用 giscus）。
 1. 接入项目，这里PaperMod主题也给出了[配置方式](https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-features/#comments)。
-1. 生成的script代码复制到`layouts/partials/comments.html`
-1. 配置文件params增加comments: true, 如下：
+  1. 生成的script代码复制到`layouts/partials/comments.html`
+  1. 配置文件params增加comments: true, 如下：
 ```yaml
 params:
   comments: true
