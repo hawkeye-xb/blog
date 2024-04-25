@@ -2,10 +2,10 @@
 title = 'Deno 羊毛：一分钟代理OpenAI API'
 date = 2023-12-07T10:09:26+08:00
 draft = false
-weight = 3
 
 categories = ['other']
 tags = ['deno', 'proxy', 'openai api', 'free']
+series = ['薅羊毛']
 +++
 
 大家好，今天来薅Deno的羊毛。
@@ -103,17 +103,17 @@ console.log(`Proxy server running at http://localhost:8000/`);
 ```
 
 ### 第三步
+Save & Deploy
+
+### 第四步
 [https://platform.openai.com/api-keys](https://platform.openai.com/api-keys) 从里面来个OpenAI 的API key，发请求时候带上。
 没Key的可以 [https://bewildcard.com/i/HB0O8Q0Y](https://bewildcard.com/i/HB0O8Q0Y) 从里面注册，按照教程生成，有提供限时虚拟机的梯子，充值可以直接使用支付宝，省事儿；不过手续费不便宜。
 
 #### 客户端
 可以去下载[chatBox](https://chatboxai.app/zh)，将当前服务的域名设置在API域名既可。
 
-### 第四步
-Save & Deploy
-
 ### 验证
-终端curl一哈
+不需要使用chatbox的话直接，终端curl一哈。
 ```shell
 curl --location --request POST 'https://{{YOUR_PROJECT}}.deno.dev' \
 --header 'Content-Type: application/json' \

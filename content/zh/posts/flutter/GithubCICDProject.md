@@ -1,9 +1,10 @@
 +++
 title = '零基础实战Flutter：Github自动构建APK Release分发'
-date = 2024-04-01
+date = 2024-04-05
 draft = false
 
 categories = ['flutter']
+series = ['零基础实战Flutter']
 +++
 
 #### Github Actions是什么

@@ -1,9 +1,10 @@
 +++
 title = '零基础实战Flutter：环境搭建(macOS M芯片)'
-date = 2024-04-01
+date = 2024-04-02
 draft = false
 
 categories = ['flutter']
+series = ['零基础实战Flutter']
 +++
 
 MacOS M1芯片机器。
