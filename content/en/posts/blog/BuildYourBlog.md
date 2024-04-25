@@ -88,17 +88,6 @@ We provide a package.json file in the root directory here to limit the version t
 ```
 push code it will rebuild.
 
-在Vercel创建新的项目，选择从Github导入“Import Git Repository”，框架选择Hugo（不选也没关系，反正都得改），将构建指令Build Command设置为`git submodule update --init --recursive && hugo --gc`。上面说过我们使用的主题是通过git模块的，这就导致一个问题，在Vercel构建的时候可能会下载失败。即使下载失败也是可以构建、部署成功，但是在访问的时候会出现xml错误提示，类似`This XML file does not appear to have any style information associated with it. The document tree is shown below.` 。
-![vercel hugo settings2024-04-23 14.48.51.png](https://s2.loli.net/2024/04/23/GM6Yor5qvhKbQe8.png)
-除此之外，Hugo版本不一致也会导致xml问题，所以建议增加`HUGO_VERSION`环境变量设置。完成之后会触发第一次构建部署，可能会遇到以下报错。
-```shell
-Skipping build cache since Node.js version changed from "18.x" to "20.x"
-Running "vercel build"
-Vercel CLI 33.7.1
-sh: line 1: hugo: command not found
-Error: Command "hugo --gc" exited with 127
-```
-
 At this point, we have our own blog and our own website ✿✿ヽ(°▽°)ノ✿。
 
 ----
