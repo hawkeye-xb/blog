@@ -4,6 +4,7 @@ date = 2024-04-03
 draft = false
 
 categories = ['flutter']
+series = ['零基础实战Flutter']
 +++
 
 写完这整个项目，Flutter算是会了吧，但感觉啥也没学会，基本所有的问题和内容，都是通过GPT的帮助完成的，用不着脑子，根本用不着🐶。    

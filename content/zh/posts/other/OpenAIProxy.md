@@ -5,6 +5,7 @@ draft = false
 
 categories = ['other']
 tags = ['deno', 'proxy', 'openai api', 'free']
+series = ['薅羊毛']
 +++
 
 大家好，今天来薅Deno的羊毛。

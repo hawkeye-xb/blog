@@ -4,6 +4,7 @@ date = 2024-04-05
 draft = false
 
 categories = ['flutter']
+series = ['零基础实战Flutter']
 +++
 
 #### Github Actions是什么

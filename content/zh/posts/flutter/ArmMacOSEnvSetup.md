@@ -4,6 +4,7 @@ date = 2024-04-02
 draft = false
 
 categories = ['flutter']
+series = ['零基础实战Flutter']
 +++
 
 MacOS M1芯片机器。

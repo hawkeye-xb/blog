@@ -4,6 +4,7 @@ date = 2024-04-01
 draft = false
 
 categories = ['flutter']
+series = ['零基础实战Flutter']
 +++
 
 目的：移动端APP开发 到 分发。
