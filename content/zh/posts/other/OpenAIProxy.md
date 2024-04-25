@@ -2,7 +2,6 @@
 title = 'Deno 羊毛：一分钟代理OpenAI API'
 date = 2023-12-07T10:09:26+08:00
 draft = false
-weight = 3
 
 categories = ['other']
 tags = ['deno', 'proxy', 'openai api', 'free']

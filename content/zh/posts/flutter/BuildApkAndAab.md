@@ -1,6 +1,6 @@
 +++
 title = '零基础实战Flutter：打包APK、AAB'
-date = 2024-04-01
+date = 2024-04-04
 draft = false
 
 categories = ['flutter']

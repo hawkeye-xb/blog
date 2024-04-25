@@ -1,9 +1,7 @@
 +++
 title = '零基础实战Flutter'
-date = 2024-04-01T10:09:26+08:00
+date = 2024-04-20
 draft = false
-
-weight = 2
 
 categories = ['flutter']
 +++
