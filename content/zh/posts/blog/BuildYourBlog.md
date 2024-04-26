@@ -8,6 +8,7 @@ ShowWordCount = true
 
 categories = ['blog']
 tags = ['hugo']
+series = ['五分钟搭建个人博客']
 +++
 
 大家好。 
