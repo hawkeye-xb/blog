@@ -1,7 +1,7 @@
 +++
 title = '五分钟搭建个人博客：更多设置'
 date = 2024-04-26T14:47:40+08:00
-draft = true
+draft = false
 
 ShowReadingTime = true
 ShowWordCount = true
