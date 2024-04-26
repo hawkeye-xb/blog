@@ -30,3 +30,23 @@ params:
   homeInfoParams:
     Content: >
       👋 Welcome to Hawkeye-xb blog!
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  # title: Hawkeye-xb Blog
+  comments: true # 启用评论模块
+  displayFullLangName: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: true
+  ShowAllPagesInArchive: true
+  ShowPageNums: true
+  ShowToc: true
+  tocopen: false # 启用文章目录
+  ShowWordCount: true
+  ShowReadingTime: true
+    
+  socialIcons:
+    - name: github
+      title: View Source on Github
+      url: "https://github.com/hawkeye-xb/blog"
+        
