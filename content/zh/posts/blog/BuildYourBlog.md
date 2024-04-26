@@ -109,9 +109,14 @@ services:
 域名注册成功之后需要经过一段时间（48小时内）才能分发到各个DNS解析服务器。这时候在Vercel会设置不上，但是会给出这边DNS的地址，去到相应的域名注册商（购买域名的地方），添加解析到目标服务器，也就是Vercel给出的地址，如下图76.76.21.21。稍微等待一会，就能设置上自定义的域名了，通过喜欢的域名访问自己的博客了。
 ![invalid domain config 2024-04-23 15.44.56.png](https://s2.loli.net/2024/04/23/RwspDPGBC1ZJWES.png)
 
+### Google Search Console验证域名所有权
+[Search Console 简介](https://support.google.com/webmasters/answer/9128668?hl=zh-Hans&ref_topic=9128571&sjid=12333764337225485116-NC)，可以帮助我们改进Google处理我们网站的方式（不验证所有权也有可能会收录）。
+![gsc verify ownership 2024-04-26 13.36.53.png](https://s2.loli.net/2024/04/26/nxkh635vLwrj2Gi.png)
+具体设置办法和域名自定义的一样。腾讯云注册的域名如下，左上角添加即可。
+![txcloud DNS set result 2024-04-26 13.31.03.png](https://s2.loli.net/2024/04/26/hfDXWQ86delY2w1.png)
 ## 评论功能
 评论功能就挺仁者见仁智者见智的，有的并不喜欢开放在个人博客，只想安安静静写作。评论模块搭建也有不同的方式，这里给出集成速度快、简单的[giscus](https://giscus.app/zh-CN) 方式，利用的是Github Discussion功能，设置简单，永久免费~。其它优势可以参考[giscus网址](https://giscus.app/zh-CN)。
-### 部署步骤
+### giscus使用方式
 1. 开通GitHub Discussions，具体就是在项目的settings 中把该项勾选上即可。（[github文档](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/enabling-or-disabling-github-discussions-for-a-repository)）
 1. 将项目设置为public，能被别人访问，获取到评论数据。如对项目有协议要求或者其它问题，可以考虑另外的方案。
 1. 将[giscus 安装](https://github.com/apps/giscus)到项目里面。
