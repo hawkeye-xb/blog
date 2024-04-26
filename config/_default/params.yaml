@@ -2,26 +2,20 @@ params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   # title: Hawkeye-xb Blog
   comments: true # 启用评论模块
-  displayFullLangName: true
+  # displayFullLangName: true
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
-  ShowRssButtonInSectionTermList: true
+  # ShowRssButtonInSectionTermList: true
   ShowAllPagesInArchive: true
   ShowPageNums: true
   ShowToc: true
   tocopen: true # 启用文章目录
+  ShowWordCount: true
+  ShowReadingTime: true
     
   socialIcons:
     - name: github
       title: View Source on Github
       url: "https://github.com/hawkeye-xb/blog"
-    # - name: Discord
-    #   title: Join discord community
-    #   url: "https://discord.gg/ahpmTvhVmp"
-    # - name: X
-    #   title: Share PaperMod on X/Twitter
-    #   url: "https://x.com/intent/tweet/?text=Checkout%20Hugo%20PaperMod%20%E2%9C%A8%0AA%20fast,%20clean,%20responsive%20Hugo%20theme.&url=https://github.com/adityatelange/hugo-PaperMod&hashtags=Hugo,PaperMod"
-    # - name: KoFi
-    #   title: Buy me a Ko-Fi :)
-    #   url: "https://ko-fi.com/adityatelange"
+    

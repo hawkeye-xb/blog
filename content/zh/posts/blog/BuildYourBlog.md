@@ -3,6 +3,9 @@ title = '五分钟搭建个人博客：零成本搭建'
 date = 2024-04-23T10:09:26+08:00
 draft = false
 
+ShowReadingTime = true
+ShowWordCount = true
+
 categories = ['blog']
 tags = ['hugo']
 +++
