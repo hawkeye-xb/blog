@@ -114,6 +114,8 @@ We can buy a cheap domain name at any registrar for the price of a piece of brea
 
 After the domain name is successfully registered, it takes time(within 48 hours) to be distributed to various DNS servers. But we can go to the corresponding domain name registrar(where it was purchased) and add resolution information to the target server(Vercel), which is the address given by Vercel, as shown below: `76.76.21.21`.
 
+**Google Search Console verify ownership is the same as this.**
+
 Waiting for a while, you can set up a custom domain name and access your blog through your favorite domain name.
 
 ![invalid domain config 2024-04-23 15.44.56.png](https://s2.loli.net/2024/04/23/RwspDPGBC1ZJWES.png)
