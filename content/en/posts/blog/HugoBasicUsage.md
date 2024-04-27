@@ -35,8 +35,8 @@ languages:
   en:
     languageName: "English"
     contentDir: "content/en"
-	# ...
-	zh:
+# ...
+  zh:
     languageName: "简体中文(chinese)"
     contentDir: "content/zh"
 ```
@@ -44,19 +44,19 @@ languages:
 ### welcome message
 ```yaml
 en:
-	languageName: "EN"
-	contentDir: "content/en"
+  languageName: "EN"
+  contentDir: "content/en"
 	
-	params:
-		homeInfoParams:
-			Content: >
-				👋 Welcome to Hawkeye-xb blog!
+  params:
+    homeInfoParams:
+      Content: >
+        👋 Welcome to Hawkeye-xb blog!
 ```
 
 ### social icon（Github icon）
 ```yaml
 params:
-	socialIcons:
+  socialIcons:
     - name: github
       title: View Source on Github
       url: "https://github.com/hawkeye-xb/blog"
@@ -81,13 +81,13 @@ my-project/
 No method has been found for the dropdown submenu.
 ```yaml
 menu:
-	main:
-		- name: Archive
-			url: archives
-			weight: 5
-		- name: Search
-			url: search/
-			weight: 10
+  main:
+    - name: Archive
+      url: archives
+      weight: 5
+    - name: Search
+      url: search/
+      weight: 10
 ```
 Weight is sorting.
 
