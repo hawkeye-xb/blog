@@ -8,9 +8,10 @@ ShowWordCount = true
 
 categories = ['blog']
 tags = ['hugo']
+series = ['Build a personal blog in five minutes']
 +++
 
-Hello every. 
+Hello everyone. 
     
 Today we will continue to study the blog construction of personal webmaster exploration.
 
