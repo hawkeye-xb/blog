@@ -73,9 +73,9 @@ params:
 title: "联系信息"
 ---
 
-姓名：{{< param "name" >}}
-电话：{{< param "phone" >}}
-住址：{{< param "address" >}}
+姓名：双花括号< param "name" >双花括号
+电话：双花括号< param "phone" >双花括号
+住址：双花括号< param "address" >双花括号
 ```
 
 ### 首页展示内容排序
