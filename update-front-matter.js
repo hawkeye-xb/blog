@@ -86,7 +86,7 @@ function updateFrontMatter(filePath, frontMatterConfig) {
   Object.assign(parsedContent.data, frontMatterConfig);
 
   const newContent = matter.stringify(parsedContent.content, parsedContent.data);
-  // fs.writeFileSync(filePath, newContent, 'utf8');
+  fs.writeFileSync(filePath, newContent, 'utf8');
   
   console.log(`Updated: ${filePath}`, newContent);
 }
