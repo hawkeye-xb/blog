@@ -1,5 +1,5 @@
 ---
-title: '五分钟搭建个人博客：字数统计，自定义front-matter'
+title: '五分钟搭建个人博客：字数统计，可配置的front-matter'
 date: 2024-04-29T14:47:40+08:00
 draft: false
 ---
