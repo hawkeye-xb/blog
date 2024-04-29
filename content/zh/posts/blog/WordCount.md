@@ -192,7 +192,7 @@ traverseFrontMatterConfigDir(frontMatterDir);
 ```
 
 
-可以在Vercel 添加该文件的执行 `node update-front-matter.js && git submodule update --init --recursive && hugo --gc`，倒是也有依赖。作为忘记添加一些通用配置的保底行为，避免配置缺失。不足之处也很明显，开发环境如果不执行脚本，则与最终部署环境内容不一致，处理方式略显暴力。
+可以在Vercel 添加该文件的执行 `node update-front-matter.js && git submodule update --init --recursive && hugo --gc`，倒是也有npm相关依赖，不用install。优势可以作为忘记添加一些通用配置的保底行为，避免配置缺失。不足之处也很明显，开发环境如果不执行脚本，则与最终部署环境内容不一致，处理方式略显暴力。
 
 后续接触得更多，对于这个场景会找到更合适的解法。这个方式分享出来，也是希望从别的博客工具迁移到Hugo的，能够更平滑、更简单。
 
