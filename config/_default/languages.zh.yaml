@@ -42,6 +42,7 @@ params:
   tocopen: false # 启用文章目录
   ShowWordCount: true
   ShowReadingTime: true
+  hasCJKLanguage: true
     
   socialIcons:
     - name: github

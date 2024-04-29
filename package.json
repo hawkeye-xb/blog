@@ -1,5 +1,10 @@
 {
   "engines": {
     "node": "18.x"
+  },
+  "dependencies": {
+    "@iarna/toml": "^2.2.5",
+    "gray-matter": "^4.0.3",
+    "js-yaml": "^4.1.0"
   }
 }
