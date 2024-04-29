@@ -27,9 +27,9 @@ taxonomies:
 ```
 ```yaml
 - identifier: series
-	name: 系列
-	url: /series/
-	weight: 290
+  name: 系列
+  url: /series/
+  weight: 290
 ```
 ```yaml
 series = ['零基础实战Flutter']

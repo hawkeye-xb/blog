@@ -26,8 +26,11 @@ params:
   homeInfoParams:
     Content: >
       👋 欢迎来到Hawkeye-xb 的博客儿!
+
   buildBlogSeriesName: "五分钟系列"
+  buildBlogSeriesOpeningRemarks: "    \n大家好。    \n今天接着研究个人站长探索之博客搭建。"
   flutterSeriesName: "Flutter 系列"
+
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   # title: Hawkeye-xb Blog
   comments: true # 启用评论模块
@@ -43,6 +46,7 @@ params:
   ShowWordCount: true
   ShowReadingTime: true
   hasCJKLanguage: true
+  isCJKLanguage: true
     
   socialIcons:
     - name: github
