@@ -141,4 +141,7 @@ https://www.figma.com/api/session/app_auth/redeem
 
 在这整个流程中，目前还没有认识到会是哪种具名的授权方式。大家如果知道，还望告知。
 
+### 最后
+最后总结下，本文主要拆解了Figma客户端的登录整个流程，并且对Electron唤起浏览器、浏览器唤起Electron做了个简单的介绍。
+
 学习和研究Figma的登录功能，就先到这里了，希望对您有帮助。
