@@ -43,11 +43,11 @@ isCJKLanguage = true
 
 况且模板文件存在最大一个问题就是，模板修改，通过模板创建的文件并不会修改。
 
-### Data 可以？
+### data
 接着又找到了data目录下的数据使用，但是只能在模板文件中使用，模板参数中还不知道有什么参数可以获取，怎么设置...
 
 ### node代码修改文章isCJKLanguage配置
-半天也没有找到有暴露的生命周期钩子，或者在某个步骤能够修改。
+半天也没有找到有暴露构建前的生命周期钩子，或者在某个步骤能够修改，构建完成之后倒是有个[PostProcess](https://gohugo.io/hugo-pipes/postprocess/)。
 
 一气之下... 掏出老工具node（主要是Vercel设置了node，可以直接使用）。直接修改文章内容，给头部添加上isCJKLanguage属性/doge。
 
