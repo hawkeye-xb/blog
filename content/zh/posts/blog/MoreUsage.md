@@ -15,7 +15,7 @@ series = ['五分钟搭建个人博客']
 
 今天接着研究个人站长探索之博客搭建。
 
-上期介绍了些多语言、文章分类、菜单配置等基础的使用方式。下面将介绍更多一些的用法，如果有更多很小的用法或者问题被探索到，也会持续更新在这篇文章里面。
+上期介绍了些多语言、文章分类、菜单配置等基础的使用方式。下面将介绍更多一些的用法，如果有更多很小的用法或者问题被探索到，也会持续更新在这篇文章里面。有些设置可能仅限于PaperMod主题。
 
 ### 文章系列（series）设置
 和tags、categories的用法一样。在`/series/` 路由会按照文章头部front matter设置内容分成多个系列。
@@ -80,6 +80,10 @@ title: "联系信息"
 
 ### 首页展示内容排序
 设置weight属性就行。
+
+### override css
+[Change width of the content #442](https://github.com/adityatelange/hugo-PaperMod/discussions/442).
+覆盖修改主题的CSS。
 
 ----
 
