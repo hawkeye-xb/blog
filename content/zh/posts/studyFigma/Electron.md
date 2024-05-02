@@ -1,7 +1,7 @@
 +++
-title = '学习和研究Figma：Electron开发环境搭建'
+title = '学习和研究Figma：Electron'
 date = 2024-04-28T10:09:26+08:00
-draft = false
+draft = true
 
 ShowReadingTime = true
 ShowWordCount = true
@@ -28,3 +28,7 @@ Electron没有很好的类似：Electron + Vue/React/Other Template 这种框架
 这种结构的好处是目录结构比较清晰，对于进程渲染需要加载的本地文件、远端文件，不管是以Vue/React，创建新项目维护都可以。不足之处也在目录、项目管理上，要有比较整体的角度，每个项目的配置文件都独立管理，不能共用构建环境参数，多项目管理也很麻烦，项目间数据交互成本高。
 
 因为这部分内容个性化区别大，习惯也不同，做了几次qs快捷项目，没整理清楚需要的内容，也就作罢，不如就直接研究Figma客户端如何实现的。
+
+----
+
+electron-forge 提供了基础版本的。
