@@ -1,7 +1,7 @@
 ---
 title: '五分钟搭建个人博客：支持多语言选择和下拉菜单'
 date: 2024-05-07T14:47:40+08:00
-draft: true
+draft: false
 ---
 {{< param "buildBlogSeriesOpeningRemarks" >}}
 
@@ -82,27 +82,30 @@ Hugo 在处理layout的时候，会优先自定义的，再到主题，如果需
 </select>
 ```
 #### CSS
-再添加上支持亮暗色的样式属性。在devtool中，找到:root定义的变量，或者[hugo css变量定义文件](https://github.com/adityatelange/hugo-PaperMod/blob/master/assets/css/core/theme-vars.css)查看使用。（这里尴尬的是bg颜色使用，目前看
+再添加上支持亮暗色的样式属性。在devtool中，找到:root定义的变量，或者[hugo css变量定义文件](https://github.com/adityatelange/hugo-PaperMod/blob/master/assets/css/core/theme-vars.css)查看使用（并不是很齐全，比如hover、active就不知道该选什么变量，或许后续我可以写个脚本，像Flutter一样一键生成、导出Material3规范的颜色，方便在Web管理颜色主题。 ）。这里尴尬的是bg颜色使用，目前是：
   - 亮色、首页使用的是--code-bg变量
   - 而暗色、首页用了--theme
   - 亮色、文章页使用的是--theme
   - 暗色、文章页用了--theme
-或许后续我可以写个脚本，像Flutter一样一键生成、导出Material3规范的颜色，方便在Web管理颜色主题）。
 ```css
 .custom-select {
   color: var(--content);
   outline: none;
   border: none;
   box-shadow: none;
+  background-color: var(--theme);
+}
+.list .custom-select {
   background-color: var(--code-bg);
 }
 
-.dark .custom-select {
+.dark .custom-select{
   background-color: var(--theme);
 }
 
 .custom-select:focus {
   outline: none;
+  /* border-color: #a9a9a9; */
 }
 
 .custom-select::-ms-expand {
@@ -112,7 +115,7 @@ Hugo 在处理layout的时候，会优先自定义的，再到主题，如果需
 
 
 ### 增加下拉菜单
-接下来给头部增加下拉菜单。同样的([hugo docs](https://gohugo.io/methods/menu-entry/haschildren/))，先找到菜单数据代码，如下：
+多语言设置完成之后，接下来给头部增加下拉菜单。同样的([hugo docs](https://gohugo.io/methods/menu-entry/haschildren/))，先找到菜单数据代码，如下：
 
 ```html
 <ul id="menu">
