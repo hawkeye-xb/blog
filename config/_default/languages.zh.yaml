@@ -13,7 +13,7 @@ menu:
       url: /categories/
       weight: 100
     - identifier: series
-      parent: 更多
+      # parent: 更多
       name: 系列
       url: /series/
       weight: 290

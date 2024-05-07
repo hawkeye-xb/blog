@@ -15,7 +15,7 @@ draft: true
 ```
 可是PaperMod本身不支持下拉菜单配置，不想覆盖主题文件，遂作罢。但不曾想，人工翻译了两篇文章之后，累了🤦🏻‍♀️，就想使用Openai api去机器翻译，既然都机器翻译，何不都支持了，结果在添加更多语言配置的时候。发现header布局是这样的，横向滚动排列，需要占用头部非常多的空间。
 
-【补充图片：多语言效果】
+![default i18N header 2024-05-07 21.26.11.png](https://s2.loli.net/2024/05/07/CcubVagk9GMzBT5.png)
 
 最终还是得自己处理PaperMod头部文件，添加语言选择和Dropdown下拉菜单。
 
@@ -23,7 +23,7 @@ draft: true
 Hugo 在处理layout的时候，会优先自定义的，再到主题，如果需要修改头部导航，只能整个部分全部覆盖。咱们搭建博客的时候，对主题文件使用的是git module的方式引入（正好今天也更新了次PaperMod主题），为了保持风格统一，直接复制[hugo papermod源码](https://github.com/adityatelange/hugo-PaperMod/blob/master/layouts/partials/header.html)，在此基础上修改。
 
 下面分享这个过程，是怎么做的，<a href="https://github.com/hawkeye-xb/blog/blob/main/layouts/partials/header.html" style="color:blue;">最终代码</a>，<a href="https://hawkeye-xb.xyz/zh/" style="color:blue;">最终效果</a>如下图：
-【补充图片：最终效果】
+![the final header 2024-05-07 21.32.50.png](https://s2.loli.net/2024/05/07/AoKSfviGaWzgdM4.png)
 
 ### 添加多语言选择
 如果不清楚到底使用的什么数据，可以在[Hugo docs](https://gohugo.io/methods/site/languages/)先行查看。
@@ -183,7 +183,7 @@ Hugo 在处理layout的时候，会优先自定义的，再到主题，如果需
 #### 滚动条
 如没意外，肯定就有意外。下拉框展开的时候，菜单列表部分出现了滚！动！条！
 
-【表情包：jelly躺倒】
+<!-- 【表情包：jelly躺倒】 -->
 
 通过devtool选中滚动条，发现是ul标签出现的滚动条，是因为设置了`overflow-x: auto`属性，目前还不清楚出于什么考虑，我认为菜单一级展示部分，只应该留给重要的导航，也不应该出现滚动条，所以直接`overflow: visible` /doge。
 
