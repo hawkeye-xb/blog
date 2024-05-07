@@ -1,43 +1,76 @@
 <style>
   /* 自定义 select 样式 */
   .custom-select {
-		outline: none;
-		border: none;
-		box-shadow: none;
-		background-color: var(--code-bg);
-    /* padding: 5px 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: white;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    position: relative; */
+    color: var(--content);
+    outline: none;
+    border: none;
+    box-shadow: none;
+    background-color: var(--code-bg);
+  }
+  
+  .dark .custom-select {
+    background-color: var(--theme);
   }
 
-  /* 为 select 添加自定义箭头 */
-  .custom-select-wrapper {
-    position: relative;
-  }
-
-  /* .custom-select-wrapper:after {
-    content: "▼";
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    pointer-events: none;
-  } */
-
-  /* 样式美化 */
   .custom-select:focus {
     outline: none;
     border-color: #a9a9a9;
   }
 
-  /* 为了更好的样式，可以隐藏原生的 select，然后使用伪元素来创建一个新的外观 */
   .custom-select::-ms-expand {
     display: none; /* 针对 IE/Edge */
+  }
+  
+  /* 有个overflow-x!!! 为什么？！ */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    font-size: 12px;
+
+    display: none;
+    position: absolute;
+    inset: 0px auto auto 0px;
+    margin: 0px;
+    transform: translate3d(0px, 48px, 0px);
+
+    z-index: 1000;
+    padding: 4px 0;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background-color:var(--theme);
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-item {
+    height: 32px;
+    line-height: 32px;
+    min-width: 80px;
+    
+    color: var(--content);
+    padding: 4px 16px;
+    text-align: inherit;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    list-style: none;
+  }
+  .dropdown-item:hover {
+    background-color: var(--code-bg);
+  }
+  #menu .dropdown .dropdown-content .dropdown-item a {
+    font-size: 12px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  #menu .dropdown .dropdown-content .dropdown-item a span {
+    border: none;
   }
 </style>
 
@@ -159,39 +192,62 @@
                     {{- end -}}
                     {{- end}}
                 </ul> -->
-								<div class="custom-select-wrapper">
-								<select class="custom-select" id="language-select" onchange="window.location.href=this.value;">
-										<option
-											selected
-											title="{{ $.Site.Language.LanguageName | default ($.Site.Language.Lang) }}"
-										>{{ $.Site.Language.LanguageName | default ($.Site.Language.Lang) }}</option>
-										{{- range . -}}
-										{{- if ne $lang .Lang }}
-										<option
-											value="{{- .Permalink -}}"
-											title="{{ .Language.Params.languageAltTitle | default (.Language.LanguageName | emojify) | default (.Lang | title) }}"
-										>
-												{{- if (and site.Params.displayFullLangName (.Language.LanguageName)) }}
-												{{- .Language.LanguageName | emojify -}}
-												{{- else }}
-												{{- .Lang | title -}}
-												{{- end -}}
-										</option>
-										{{- end -}}
-										{{- end}}
-								</select>
-								</div>
-
+                <select class="custom-select" id="language-select" onchange="window.location.href=this.value;">
+                    <option
+                        selected
+                        title="{{ $.Site.Language.LanguageName | default ($.Site.Language.Lang) }}"
+                    >{{ $.Site.Language.LanguageName | default ($.Site.Language.Lang) }}</option>
+                    {{- range . -}}
+                    {{- if ne $lang .Lang }}
+                    <option
+                        value="{{- .Permalink -}}"
+                        title="{{ .Language.Params.languageAltTitle | default (.Language.LanguageName | emojify) | default (.Lang | title) }}"
+                    >
+                            {{- if (and site.Params.displayFullLangName (.Language.LanguageName)) }}
+                            {{- .Language.LanguageName | emojify -}}
+                            {{- else }}
+                            {{- .Lang | title -}}
+                            {{- end -}}
+                    </option>
+                    {{- end -}}
+                    {{- end}}
+                </select>
                 {{- end }}
             </div>
         </div>
         {{- $currentPage := . }}
-        <ul id="menu">
+        <ul id="menu" style="overflow: visible;">
             {{- range site.Menus.main }}
             {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL) ) | absLangURL }}
             {{- $page_url:= $currentPage.Permalink | absLangURL }}
             {{- $is_search := eq (site.GetPage .KeyName).Layout `search` }}
             <li>
+                {{- if .HasChildren }}
+                <ul class="dropdown">
+                    <span style="font-size: 16px;">{{ .Title | default .Name }} {{- cond $is_search (" (Alt + /)" | safeHTMLAttr) ("" | safeHTMLAttr ) }}</span>
+                    <div class="dropdown-content">
+                        {{- range .Children }}
+                        <div class="dropdown-item">
+                            <a href="{{ .URL | absLangURL }}" title="{{ .Title | default .Name }} {{- cond $is_search (" (Alt + /)" | safeHTMLAttr) ("" | safeHTMLAttr ) }}" {{- cond $is_search (" accesskey=/" | safeHTMLAttr) ("" | safeHTMLAttr ) }}>
+                                <span {{- if eq $menu_item_url $page_url }} class="active" {{- end }}>
+                                    {{- .Pre }}
+                                    {{- .Name -}}
+                                    {{ .Post -}}
+                                </span>
+                                {{- if (findRE "://" .URL) }}&nbsp;
+                                <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                                    <path d="M15 3h6v6"></path>
+                                    <path d="M10 14L21 3"></path>
+                                </svg>
+                                {{- end }}
+                            </a>
+                        </div>
+                        {{- end }}
+                    </div>
+                </ul>
+                {{- else }}
                 <a href="{{ .URL | absLangURL }}" title="{{ .Title | default .Name }} {{- cond $is_search (" (Alt + /)" | safeHTMLAttr) ("" | safeHTMLAttr ) }}"
                 {{- cond $is_search (" accesskey=/" | safeHTMLAttr) ("" | safeHTMLAttr ) }}>
                     <span {{- if eq $menu_item_url $page_url }} class="active" {{- end }}>
@@ -208,6 +264,7 @@
                     </svg>
                     {{- end }}
                 </a>
+                {{- end }}
             </li>
             {{- end }}
         </ul>
