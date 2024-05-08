@@ -1,5 +1,6 @@
 +++
 title = '五分钟搭建个人博客：更多设置'
+description = '五分钟搭建个人博客：更多设置。深入探讨Hugo个人博客的高级设置，包括文章系列设置、阅读时长和字数统计、全局常量的使用、首页内容排序、CSS覆盖等。还提供了如何优化SEO的建议，如添加独特、简洁、包含关键词的meta描述。'
 date = 2024-04-26T14:47:40+08:00
 draft = false
 
@@ -81,11 +82,41 @@ title: "联系信息"
 ### 首页展示内容排序
 设置weight属性就行。
 
-### override css
+### CSS覆盖
 [Change width of the content #442](https://github.com/adityatelange/hugo-PaperMod/discussions/442).
 覆盖修改主题的CSS。
 
 ----
+
+### 添加文章描述
+front-matter 的description对应的是HTML meta的description，如不单独设置，则默认使用文章内容，SEO功能性没这么强。`<meta name="description" content="...">`标签的作用是提供一个页面的简短描述。这个描述通常在搜索引擎结果页面（SERPs）上显示为页面的摘要，有助于用户了解页面内容是否与他们的搜索查询相关。
+
+对于SEO来说，meta描述标签应该：
+ - 包含相关关键词：这有助于搜索引擎理解页面的内容。
+ - 是独一无二的：每个页面都应该有一个独特的描述。
+ - 简洁明了：通常建议长度在150-160个字符之间。
+```markdown
++++
+title = '五分钟搭建个人博客：零成本搭建'
+description = '五分钟搭建个人博客：零成本搭建。使用Hugo框架和Vercel部署，详细介绍了如何创建、配置和部署个人博客。包括本地环境搭建、新项目创建、部署到Vercel、图床使用、数据分析、自定义域名、评论功能等内容。'
+date = 2024-04-23T10:09:26+08:00
+draft = false
+
+ShowReadingTime = true
+ShowWordCount = true
+
+categories = ['blog']
+tags = ['hugo']
+series = ['五分钟搭建个人博客']
++++
+```
+看了PaperMod代码，description信息会展示在文章头部，并没有类似showDescription配置项，所以直接在CSS上覆盖代码，全部在页面上隐藏信息，仅提供给meta使用。
+```css
+/* 隐藏文章头部的描述，仅仅当成meta使用即可 */
+.post-description {
+  display: none;
+}
+```
 
 ### 建议：不要使用index.md
 猜测的，会构建index.html，所以在路由下不添加具体路径也可以访问，但是整个目录应该会只打包这个文件。
