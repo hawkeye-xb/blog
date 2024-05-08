@@ -89,6 +89,7 @@ title: "联系信息"
 ----
 
 ### 添加文章描述
+![seo meta description 2024-05-08 14.23.18.png](https://s2.loli.net/2024/05/08/uA1M62VGxgTWzHS.png)
 front-matter 的description对应的是HTML meta的description，如不单独设置，则默认使用文章内容，SEO功能性没这么强。`<meta name="description" content="...">`标签的作用是提供一个页面的简短描述。这个描述通常在搜索引擎结果页面（SERPs）上显示为页面的摘要，有助于用户了解页面内容是否与他们的搜索查询相关。
 
 对于SEO来说，meta描述标签应该：
