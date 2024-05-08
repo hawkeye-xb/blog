@@ -46,7 +46,7 @@ languages:
 en:
   languageName: "EN"
   contentDir: "content/en"
-	
+
   params:
     homeInfoParams:
       Content: >

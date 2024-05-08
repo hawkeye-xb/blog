@@ -37,10 +37,10 @@ https://www.figma.com/api/session/app_auth
 ```
 ```json
 {
-	"meta": {
-		"id": "auth_code_1",
-		"app_type": "desktop"
-	},
+  "meta": {
+    "id": "auth_code_1",
+    "app_type": "desktop"
+  },
 }
 ```
 ### Web授权
@@ -79,14 +79,14 @@ https://www.figma.com/api/session/app_auth/{{ auth_code_1 }}/grant
 ```
 ```
 {
-	"error": false,
-	"status": 200,
-	"meta": {
-		"id": "auth_code_1",
-		"app_type": "desktop",
-		"g_secret": "auth_code_2"
-	},
-	"i18n": null
+  "error": false,
+  "status": 200,
+  "meta": {
+    "id": "auth_code_1",
+    "app_type": "desktop",
+    "g_secret": "auth_code_2"
+  },
+  "i18n": null
 }
 ```
 
