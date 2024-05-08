@@ -3,3 +3,8 @@
 	margin-left: auto;
   margin-right: auto;
 }
+
+/* 隐藏文章头部的描述，仅仅当成meta使用即可 */
+.post-description {
+	display: none;
+}

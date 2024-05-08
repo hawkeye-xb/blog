@@ -34,8 +34,8 @@ languages:
   en:
     languageName: "English"
     contentDir: "content/en" # 指定语言文件目录
-	# ...
-	zh:
+  # ...
+  zh:
     languageName: "简体中文(chinese)"
     contentDir: "content/zh"
 ```
@@ -43,22 +43,22 @@ languages:
 再仔细查看demo配置文件，params下的homeInfoParams很明显就是当前的欢迎语，如需支持多语言，都得单独设置在对应语言的配置下。如：
 ```yaml
 zh:
-	languageName: "简体中文(chinese)"
-	contentDir: "content/zh"
-	
-	params:
-		homeInfoParams:
-			Content: >
-				👋 欢迎来到Hawkeye-xb 的博客!
+  languageName: "简体中文(chinese)"
+  contentDir: "content/zh"
+  
+  params:
+    homeInfoParams:
+      Content: >
+        👋 欢迎来到Hawkeye-xb 的博客!
 ```
 
 ### 社交icon（Github icon）
 在欢迎语下面提供直接跳转网址的社交按钮，比如说Github、推特（X）等。
 ```yaml
 socialIcons:
-	- name: github
-		title: View Source on Github
-		url: "https://github.com/adityatelange/hugo-PaperMod"
+  - name: github
+    title: View Source on Github
+    url: "https://github.com/adityatelange/hugo-PaperMod"
 ```
 
 ### 配置文件拆分
@@ -82,13 +82,13 @@ my-project/
 头部的菜单导航，一眼望去，menu关键字就是了。
 ```yaml
 menu:
-	main:
-		- name: Archive
-			url: archives
-			weight: 5
-		- name: Search
-			url: search/
-			weight: 10
+  main:
+    - name: Archive
+      url: archives
+      weight: 5
+    - name: Search
+      url: search/
+      weight: 10
 ```
 这里URL对应跳转的页面，和上面说的内容组织结构相对应。weight是对应排序的权重。
 
