@@ -16,7 +16,7 @@ Hello everyone.
 Today we will continue to study the blog construction of personal webmaster exploration.
 
 Personal blog advantages:
- - free, so we alse find free ones😄
+ - freedom
  - archive your knowledge
  - global perspective
 
