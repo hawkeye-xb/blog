@@ -22,7 +22,7 @@ draft: false
 ## 修改头部导航样式
 Hugo 在处理layout的时候，会优先自定义的，再到主题，如果需要修改头部导航，只能整个部分全部覆盖。咱们搭建博客的时候，对主题文件使用的是git module的方式引入（正好今天也更新了次PaperMod主题），为了保持风格统一，直接复制[hugo papermod源码](https://github.com/adityatelange/hugo-PaperMod/blob/master/layouts/partials/header.html)，在此基础上修改。
 
-下面分享这个过程，是怎么做的，<a href="https://github.com/hawkeye-xb/blog/blob/main/layouts/partials/header.html" style="color:blue;">最终代码</a>，<a href="https://hawkeye-xb.xyz/zh/" style="color:blue;">最终效果</a>如下图：
+下面分享这个过程，是怎么做的，<a href="https://github.com/hawkeye-xb/blog/blob/main/layouts/partials/header.html" style="color:blue;">最终代码</a>，<a href="https://hawkeye-xb.xyz/" style="color:blue;">最终效果</a>如下图：
 ![the final header 2024-05-07 21.32.50.png](https://s2.loli.net/2024/05/07/AoKSfviGaWzgdM4.png)
 
 ### 添加多语言选择
@@ -196,7 +196,7 @@ Hugo 在处理layout的时候，会优先自定义的，再到主题，如果需
 ### 最后
 最后总结下今天的五分钟，使用了select、option给PaperMod主题语言列表替换为选择的方式，遇到了颜色变量的问题；然后自定义了下拉选框(dropdown)，简单的支持子菜单导航，过程遇到了滚动条和选项高度问题。
 
-<a href="https://github.com/hawkeye-xb/blog/blob/main/layouts/partials/header.html" style="color:blue;">最终代码</a>，<a href="https://hawkeye-xb.xyz/zh/" style="color:blue;">最终效果</a>
+<a href="https://github.com/hawkeye-xb/blog/blob/main/layouts/partials/header.html" style="color:blue;">最终代码</a>，<a href="https://hawkeye-xb.xyz/" style="color:blue;">最终效果</a>
 
 今天这五分钟，希望对您有帮助/doge。
 
