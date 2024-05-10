@@ -96,12 +96,35 @@ It just so happens that the menu here is the URL of archive and search respectiv
 
 The search function requires creating files and setting layout.
 ```markdown
----
+<!-- --- -->
 title: "Search"
 placeholder: Search demo site with full text fuzzy search ...
 layout: "search"
----
+<!-- --- -->
 ```
+It was verified that entering any content in the search box did not display any matching items. You also need [paperMod fuseOpts](https://github.com/adityatelange/hugo-PaperMod/wiki/Variables) to implement the search.
+
+```
+fuseOpts:
+  isCaseSensitive: false
+  shouldSort: true
+  location: 0
+  distance: 1000
+  threshold: 0.4
+  minMatchCharLength: 0
+  limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+  keys: ["title", "permalink", "summary", "content"] ##  can be less but not more than shown in list
+```
+And [hugo output settings](https://gohugo.io/templates/output-formats/), to provide content for the search function.
+```yaml
+params:
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+```
+
 ### category, tag, series
 category, tag, series alse need to define the category in front matter.
 ```yaml

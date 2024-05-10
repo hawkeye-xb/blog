@@ -103,6 +103,28 @@ layout: "search"
 ```
 简单粗暴~
 
+验证发现搜索框输入任何内容都没有展示匹配项。还需要[paperMod fuseOpts](https://github.com/adityatelange/hugo-PaperMod/wiki/Variables)来实现检索。
+```
+fuseOpts:
+  isCaseSensitive: false
+  shouldSort: true
+  location: 0
+  distance: 1000
+  threshold: 0.4
+  minMatchCharLength: 0
+  limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+  keys: ["title", "permalink", "summary", "content"] ##  can be less but not more than shown in list
+```
+和[hugo 输出设置](https://gohugo.io/templates/output-formats/)，给检索功能提供内容。
+```yaml
+params:
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+```
+
 ### 类别、标签
 [分类taxonomies](https://gohugo.io/content-management/taxonomies/) 在配置文件开启之后，对应文章定制配置上面，添加上tags和categories就可以。
 ```yaml
