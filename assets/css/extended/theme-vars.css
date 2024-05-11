@@ -1,4 +1,5 @@
 .post-content img {
+	/* https://stackoverflow.com/questions/48063067/resize-image-in-hugo-v-0-32-x-in-markdown/48063333#48063333 */
 	/* max-width: 96%; */
 	margin-left: auto;
   margin-right: auto;
