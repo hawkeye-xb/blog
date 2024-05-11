@@ -1,12 +1,18 @@
-+++
-title = 'Deno 羊毛：一分钟代理OpenAI API'
-date = 2023-12-07T10:09:26+08:00
-draft = false
-
-categories = ['other']
-tags = ['deno', 'proxy', 'openai api', 'free']
-series = ['薅羊毛']
-+++
+---
+title: Deno 羊毛：一分钟代理OpenAI API
+date: 2023-12-07T02:09:26.000Z
+draft: false
+categories:
+  - other
+tags:
+  - deno
+  - proxy
+  - openai api
+  - free
+series:
+  - 薅羊毛
+description: ' 在探索低成本使用OpenAI API的道路上，我们借助了Deno的强大功能。通过在Deno Playground中部署一个简单的代理服务器，我们能够绕过地理限制，直接与OpenAI的API进行交互。这个过程不仅节省了VPN和OpenAI Plus会员的费用，还提供了更加灵活和自主的控制方式。通过使用自己的API密钥，并结合国内代理商或拼团的方式，我们可以更加经济高效地进行研究和开发。此外，我们还介绍了如何通过curl命令在终端进行验证，确保一切运行正常。这一切的实现，都离不开Deno的强大支持，它让我们能够更加自由地探索和创新。希望这一分钟的分享，能够为您带来启发和帮助。Deno，确实牛逼！'
+---
 
 大家好，今天来薅Deno的羊毛。
 

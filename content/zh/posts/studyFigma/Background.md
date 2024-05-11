@@ -1,16 +1,19 @@
-+++
-title = '学习和研究Figma：背景'
-date = 2024-04-28T10:09:26+08:00
-draft = false
-
-ShowReadingTime = true
-ShowWordCount = true
-isCJKLanguage = true
-
-categories = ['学习']
-tags = ['Electron', 'Figma']
-series = ['学习和研究Figma']
-+++
+---
+title: 学习和研究Figma：背景
+date: 2024-04-28T02:09:26.000Z
+draft: false
+ShowReadingTime: true
+ShowWordCount: true
+isCJKLanguage: true
+categories:
+  - 学习
+tags:
+  - Electron
+  - Figma
+series:
+  - 学习和研究Figma
+description: ' 在探索互联网产品的全生命周期中，从设计到原型再到研发，Figma作为一款设计工具，其影响力不容小觑。Figma采用Electron框架构建，而Electron最新版本30.0.0中，废弃了browserView，转而提供WebContentsView。这一变化可能对Figma等使用Electron框架的产品产生影响。尽管现在解包Figma的asar文件会遇到内存越界的问题，但这并不妨碍我们学习和研究Figma的基础功能。通过深入了解Electron的功能特性，我们可以从产品视角和研发思维两个角度出发，更好地理解设计和研发之间的相互作用，从而在互联网产品的开发过程中实现更高效的协作。'
+---
 
 大家好。
 

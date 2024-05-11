@@ -1,15 +1,17 @@
-+++
-title = '五分钟搭建个人博客：设置装饰，多语言、分类、搜索等'
-date = 2024-04-24T14:47:40+08:00
-draft = false
-
-ShowReadingTime = true
-ShowWordCount = true
-
-categories = ['blog']
-tags = ['hugo']
-series = ['五分钟搭建个人博客']
-+++
+---
+title: 五分钟搭建个人博客：设置装饰，多语言、分类、搜索等
+date: 2024-04-24T06:47:40.000Z
+draft: false
+ShowReadingTime: true
+ShowWordCount: true
+categories:
+  - blog
+tags:
+  - hugo
+series:
+  - 五分钟搭建个人博客
+description: ' 欢迎访问Hawkeye-xb的博客！在这里，我们分享了如何使用Hugo框架零成本搭建个人博客，并为其添加多语言支持、欢迎语、社交图标、菜单导航、搜索和归档功能。通过详细的配置文件拆分和内容组织，我们让博客更加丰富和用户友好。探索我们的教程，让您的博客搭建之旅更加顺畅。'
+---
 
 大家好。
     

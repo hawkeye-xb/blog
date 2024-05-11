@@ -1,15 +1,17 @@
-+++
-title = 'Build a personal blog in five minutes: build it zero cost'
-date = 2024-04-23T10:09:26+08:00
-draft = false
-
-ShowReadingTime = true
-ShowWordCount = true
-
-categories = ['blog']
-tags = ['hugo']
-series = ['Build a personal blog in five minutes']
-+++
+---
+title: 'Build a personal blog in five minutes: build it zero cost'
+date: 2024-04-23T02:09:26.000Z
+draft: false
+ShowReadingTime: true
+ShowWordCount: true
+categories:
+  - blog
+tags:
+  - hugo
+series:
+  - Build a personal blog in five minutes
+description: ' Discover the simplicity of building your personal blog with Hugo, Github, and Vercel. Learn how to set up your local environment on MacOS, create a new blog, and deploy it effortlessly. Customize your domain, integrate Google Analytics, and add a comment section with giscus. Start your blogging journey with ease and enjoy the freedom of sharing your thoughts with the world.'
+---
 
 Hello everyone. 
     
