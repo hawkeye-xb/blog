@@ -1,15 +1,17 @@
-+++
-title = 'Build a personal blog in five minutes: i18n, categories, search settings'
-date = 2024-04-24T14:47:40+08:00
-draft = false
-
-ShowReadingTime = true
-ShowWordCount = true
-
-categories = ['blog']
-tags = ['hugo']
-series = ['Build a personal blog in five minutes']
-+++
+---
+title: 'Build a personal blog in five minutes: i18n, categories, search settings'
+date: 2024-04-24T06:47:40.000Z
+draft: false
+ShowReadingTime: true
+ShowWordCount: true
+categories:
+  - blog
+tags:
+  - hugo
+series:
+  - Build a personal blog in five minutes
+description: ' Description: Learn how to enhance your Hugo blog with multi-language support, welcome messages, social icons, and menu options. Discover the importance of content organization, search functionality, and taxonomy for a more user-friendly experience. Follow this guide to transform your blog from a simple article page to a fully-featured, engaging website.'
+---
 
 Hello everyone. 
     

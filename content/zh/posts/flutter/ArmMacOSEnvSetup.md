@@ -1,8 +1,9 @@
-+++
-title = '零基础实战Flutter：环境搭建(macOS M芯片)'
-date = 2024-04-02
-draft = false
-+++
+---
+title: 零基础实战Flutter：环境搭建(macOS M芯片)
+date: 2024-04-02
+draft: false
+description: ' 在MacOS M1芯片机器上搭建Flutter开发环境，首先需要安装Rosetta以兼容x86_64指令集。接着，下载并解压Flutter SDK到指定目录，并配置环境变量。建议安装Xcode和Android Studio以完善开发工具链。使用`flutter doctor`命令检查工具链的完整性。对于CocoaPods的安装，可参考相关指南。安装开发工具的Flutter插件后，即可创建并运行Flutter项目。在开发过程中，`r`命令用于热更新，`R`用于热重启，而终端输出的DevTools地址可用于调试。'
+---
 
 MacOS M1芯片机器。
 

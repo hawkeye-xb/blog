@@ -1,11 +1,13 @@
-+++
-title = '零基础实战Flutter：背景'
-date = 2024-04-01
-draft = false
-
-categories = ['flutter']
-series = ['零基础实战Flutter']
-+++
+---
+title: 零基础实战Flutter：背景
+date: 2024-04-01
+draft: false
+categories:
+  - flutter
+series:
+  - 零基础实战Flutter
+description: ' Description: 探索Flutter与AI结合的移动端APP开发之旅。从零基础到功能实现，借助GPT-4的强大助力，一周内完成了一款实用的确认清单APP。该APP不仅支持快速创建副本和自定义提醒，还能离线使用，满足日常需求。跟随我们的系列记录，见证个人开发者如何借助AI技术，独立完成从构思到分发的全流程。查看完整项目，请访问GitHub。'
+---
 
 目的：移动端APP开发 到 分发。
 

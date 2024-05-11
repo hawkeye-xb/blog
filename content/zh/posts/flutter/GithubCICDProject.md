@@ -1,11 +1,17 @@
-+++
-title = '零基础实战Flutter：Github自动构建APK Release分发'
-date = 2024-04-05
-draft = false
+---
+title: 零基础实战Flutter：Github自动构建APK Release分发
+date: 2024-04-05
+draft: false
+categories:
+  - flutter
+series:
+  - 零基础实战Flutter
+description: >2-
+   ### 描述信息
 
-categories = ['flutter']
-series = ['零基础实战Flutter']
-+++
+  "自动化您的Flutter应用发布流程，使用GitHub Actions实现持续集成与部署。本指南详细介绍了如何配置GitHub
+  Actions工作流，以在每次代码推送时自动构建、测试和部署您的应用。通过创建Release，您可以轻松管理不同版本的构建产物，并直接从GitHub仓库分发给用户。遵循本指南，您将能够高效地自动化您的发布流程，确保每次发布都是稳定且可靠的。"
+---
 
 #### Github Actions是什么
 
