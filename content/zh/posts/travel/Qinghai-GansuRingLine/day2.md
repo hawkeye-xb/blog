@@ -17,7 +17,7 @@ series = ['青海-甘肃环线']
 
 沿着德小高速慢慢爬升，来到四千海拔，路两侧连绵、巍峨的雪山，沟壑分明，整个都被白雪覆盖，说不出的震撼。柴达木盆地，已经开始展示它的风采。
 
-![qinghaihu-heimahe](/images/travel/qinghai-gansu/snow_mountain_range.jpg)
+![snow_mountain_range](/images/travel/qinghai-gansu/snow_mountain_range.jpg)
 
 慢慢的，沙上的海浪悄无声息的退去了，剩下望不到头的沙海，在风力的作用下，呈现出波浪状的姿态。继续前进，路过了陡峭的长下坡后紧接长上坡的315国道U型公路，我觉得才算是进入了盆地吧。相比冒着危险在马路中间拍人生照片，我更喜欢看远处云朵投影在沙丘上。
 
