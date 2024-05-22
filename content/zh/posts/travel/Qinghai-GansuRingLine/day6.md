@@ -1,7 +1,7 @@
 +++
 title = '青海-甘肃环线：第六天'
 date = 2024-05-14T20:47:40+08:00
-draft = true
+draft = false
 
 categories = ['travel']
 tags = ['青海-甘肃', '旅游']
