@@ -1,5 +1,5 @@
 ---
-title: Deno 羊毛：一分钟代理OpenAI API
+title: 薅Deno 羊毛：一分钟代理OpenAI API
 date: 2023-12-07T02:09:26.000Z
 draft: false
 categories:
