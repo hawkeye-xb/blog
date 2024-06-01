@@ -3,6 +3,7 @@ title: 五分钟搭建个人博客：支持多语言选择和下拉菜单
 date: 2024-05-07T06:47:40.000Z
 draft: false
 description: ' 在PaperMod主题中自定义头部导航，添加了多语言选择和下拉菜单功能。通过修改头部文件，实现了多语言的聚合展示和下拉菜单的子菜单导航，同时解决了滚动条和选项高度问题。最终效果可在链接查看。'
+weight: 3
 ---
 {{< param "buildBlogSeriesOpeningRemarks" >}}
 
