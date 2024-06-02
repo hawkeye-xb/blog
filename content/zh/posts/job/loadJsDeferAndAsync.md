@@ -1,7 +1,7 @@
 ---
-title: <script> 中的 defer 和 async 属性
+title: script中的defer和async属性
 date: 2024-06-01
-draft: true
+draft: false
 ---
 ### [html.spec.whatwg.org 对属性的描述](https://html.spec.whatwg.org/multipage/scripting.html#attr-script-async)
 The async and defer attributes are boolean attributes that indicate how the script should be evaluated.
