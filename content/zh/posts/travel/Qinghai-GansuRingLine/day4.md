@@ -43,7 +43,10 @@ series = ['青海-甘肃环线']
 
 下了骆驼，就在鸣沙山底下，脱了鞋我就往山上爬去，走半天也没前进多远，一步迈出去，滑回去了半步。还是选择铺在山上的木头软梯吧，一口气爬到山顶。往爬山的正方向看去，山脊弯曲如河流，细细的一条和毛笔画出来的一般，傍晚的阳光打在右侧，左侧的阴影，在高处往下看，可能就跟个八卦图似的。
 
-![mingshashan](/images/travel/qinghai-gansu/mingshashan.jpg)
+<!-- ![mingshashan](/images/travel/qinghai-gansu/mingshashan.jpg) -->
+<a href="/images/travel/qinghai-gansu/mingshashan.jpg" data-lightbox="image-mingshashan" data-title="mingshashan">
+  <img src="/images/travel/qinghai-gansu/mingshashan.jpg" alt="mingshashan">
+</a>
 
 没发现就上来这么一会儿，拿手里的鞋子已经装上不少沙子了，再吹了会儿就往下了，沙山陡峭但往下确出奇的好走，一步步都陷进沙子里。
 
