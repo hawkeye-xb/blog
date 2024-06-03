@@ -33,6 +33,8 @@ description: '如何使用lightbox2为基于Hugo和PaperMod主题的个人博客
 7. 确保`dist/images`被引入，整个dist都过来了，也就确保了。
 8. 最后就是lightbox的使用方式了。
 
+**当然如果你dist被ignore了，别忘记改个名字！**
+
 #### lightbox使用方式
 ##### 单图片
 ```html
