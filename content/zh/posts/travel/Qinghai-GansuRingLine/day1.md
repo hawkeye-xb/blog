@@ -28,7 +28,10 @@ description: ' 探索青海湖至德令哈市的壮丽之旅，穿越青海湖�
 
 抬眼略微往里点儿看去，缓缓的弧度行程了一个湾。湾的那测，在视野范围内隆起快要被铺平沙丘似的山脉，在五月份了还留着雪顶。湾往外的海里，微风轻拂。透明渐变成浅蓝，还倒影着白云，再有浅蓝变深，变成远处的墨绿。而后又立刻变成白加蓝，将海天分割开，蓝天白云。
 
-![qinghaihu-heimahe](/images/travel/qinghai-gansu/qinghaihu.jpg)
+<!-- ![qinghaihu-heimahe](/images/travel/qinghai-gansu/qinghaihu.jpg) -->
+<a href="/images/travel/qinghai-gansu/qinghaihu.jpg" data-lightbox="image-qinghaihu-heimahe" data-title="qinghaihu-heimahe">
+  <img src="/images/travel/qinghai-gansu/qinghaihu.jpg" alt="qinghaihu-heimahe">
+</a>
 
 一切都是那么的温柔，平缓和具有层次感。人生不也应该是这样的吗？再点缀些不同种类的海鸟。
 
