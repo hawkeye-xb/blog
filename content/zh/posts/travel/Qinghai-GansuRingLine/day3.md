@@ -15,7 +15,10 @@ series = ['青海-甘肃环线']
 
 回到景色，这次我们没有选择乘坐摆渡车小火车，顺着往里走，辽阔的大地，晴朗的天空，岸边的白色钢琴架子，倒影在浅绿的湖水上，略微遗憾就是无法和茶卡盐湖一样处身湖中，也没有那么大气滂沱。
 
-![feicuihu-gangqing](/images/travel/qinghai-gansu/feicuihu-gangqing.jpg)
+<!-- ![feicuihu-gangqing](/images/travel/qinghai-gansu/feicuihu-gangqing.jpg) -->
+<a href="/images/travel/qinghai-gansu/feicuihu-gangqing.jpg" data-lightbox="image-feicuihu-gangqing" data-title="feicuihu-gangqing">
+  <img src="/images/travel/qinghai-gansu/feicuihu-gangqing.jpg" alt="feicuihu-gangqing">
+</a>
 
 偏离主流游玩路线，短暂游玩之后，就又是团队集合的时候了，这时候才抽空看了下无人机拍摄的内容，才真正感受到了什么叫“碧绿散千倾，翡翠满人间”。
 
@@ -30,6 +33,9 @@ series = ['青海-甘肃环线']
 
 作为丝绸之路的咽喉要塞，耳熟能详的更有“西出阳关无故人”。匆匆走过城墙、阳关博物院，出了阳关，走到阳关故址，极目望去，左右两侧一小片绿洲，中间夹着茫茫的沙漠，望不到尽头，哪里还有什么人家。前天傍晚在百公里路边上没有任何房屋，前后也没有别的车辆，仿佛孤舟飘零在天地间的孤寂感又礴然袭来，让人迷失其间，回看来路，才终于明白了“劝君更尽一杯酒”。
 
-![yangguan](/images/travel/qinghai-gansu/yangguan.jpg)
+<!-- ![yangguan](/images/travel/qinghai-gansu/yangguan.jpg) -->
+<a href="/images/travel/qinghai-gansu/yangguan.jpg" data-lightbox="image-yangguan" data-title="yangguan">
+  <img src="/images/travel/qinghai-gansu/yangguan.jpg" alt="yangguan">
+</a>
 
 匆匆而来匆匆而回。下一站：敦煌。

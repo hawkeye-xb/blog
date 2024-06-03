@@ -17,7 +17,10 @@ series = ['青海-甘肃环线']
 
 沿着德小高速慢慢爬升，来到四千海拔，路两侧连绵、巍峨的雪山，沟壑分明，整个都被白雪覆盖，说不出的震撼。柴达木盆地，已经开始展示它的风采。
 
-![snow_mountain_range](/images/travel/qinghai-gansu/snow_mountain_range.jpg)
+<!-- ![snow_mountain_range](/images/travel/qinghai-gansu/snow_mountain_range.jpg) -->
+<a href="/images/travel/qinghai-gansu/snow_mountain_range.jpg" data-lightbox="image-snow_mountain_range" data-title="snow_mountain_range">
+  <img src="/images/travel/qinghai-gansu/snow_mountain_range.jpg" alt="snow_mountain_range">
+</a>
 
 慢慢的，沙上的海浪悄无声息的退去了，剩下望不到头的沙海，在风力的作用下，呈现出波浪状的姿态。继续前进，路过了陡峭的长下坡后紧接长上坡的315国道U型公路，我觉得才算是进入了盆地吧。相比冒着危险在马路中间拍人生照片，我更喜欢看远处云朵投影在沙丘上。
 
@@ -37,7 +40,10 @@ series = ['青海-甘肃环线']
 
 虽然仅到了小河边上，管中窥豹也能想象得到大湖该有多美啊。较于犀牛海的深邃蓝白，东台的水更浅些，更透澈。河床底是白色的，整个就像是往水里面，加一点蓝，再加一点蓝的感觉，蹲下看是透明，越高一点就更蓝一点。又像是上学时候化学实验烧杯里面的矿物蓝，放在白白的纸上，突然一下把它放大到天地间，假得仿佛是天上的河流。
 
- <img src="/images/travel/qinghai-gansu/dongtaijinaierhu.jpg" style="max-width: 40%" alt="dongtaijinaierhu" align=center />
+ <!-- <img src="/images/travel/qinghai-gansu/dongtaijinaierhu.jpg" style="max-width: 40%" alt="dongtaijinaierhu" align=center /> -->
+<a href="/images/travel/qinghai-gansu/dongtaijinaierhu.jpg" data-lightbox="image-dongtaijinaierhu" data-title="dongtaijinaierhu">
+  <img src="/images/travel/qinghai-gansu/dongtaijinaierhu.jpg" alt="dongtaijinaierhu" style="max-width: 40%" align=center>
+</a>
 
 真是意外之惊喜。
 
