@@ -59,7 +59,7 @@ params:
   socialIcons:
     - name: github
       title: View Source on Github
-      url: "https://github.com/hawkeye-xb/blog"
+      url: "https://github.com/hawkeye-xb"
   fuseOpts:
     isCaseSensitive: false
     shouldSort: true
