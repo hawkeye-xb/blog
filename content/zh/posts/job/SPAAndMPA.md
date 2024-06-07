@@ -1,5 +1,5 @@
 ---
-title:SPA对比MPA
+title: SPA对比MPA
 date: 2024-06-06
 draft: true
 ---
