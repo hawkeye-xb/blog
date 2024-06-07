@@ -49,6 +49,7 @@ draft: true
 
 提供更精细的缓存机制，通过Cache-control 设置max-age判断缓存是否过期（不发生请求），过期则将Last-Modified（response header）放在 If-Modified-Since，Etag（hash、md5等值, response header）放在If-None-Match 来确认文件是否发生改变，不改变的情况下资源返回304状态（会发起请求）。
 ![找的网图，如需要请联系删除](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20191118174507/if_none_match.png)
+(找的网图，如需要请联系删除)
 
 #### 产生的问题：
 虽然1.1在私有部署的情况下被大量使用（不用部署SSL证书）。
