@@ -1,7 +1,7 @@
 ---
 title: http相关
 date: 2024-06-02
-draft: true
+draft: false
 ---
 ### 三次握手四次挥手
 1. 客户端发起请求，携带请求序列号
