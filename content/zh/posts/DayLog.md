@@ -4,6 +4,32 @@ date: 2024-06-03
 draft: true
 ---
 ### 2024-06-09
+#### [LCR 070. 有序数组中的单一元素](https://leetcode.cn/problems/skFtm2/description/?envType=study-plan-v2&envId=bytedance-2023-spring-sprint)
+第一解：用了双指针。O(n)的复杂度。
+
+也想到了二分，看的题解，确实是可以通判断mid值的两侧来确认解的范围。不断缩小范围，题解的`nums[mid ^ 1]` 这行代码非常惊艳，如果 mid 是偶数，mid ^ 1 就是 mid + 1；如果 mid 是奇数，mid ^ 1 就是 mid - 1。
+```ts
+function singleNonDuplicate(nums: number[]): number {
+    let low = 0; let high = nums.length - 1;
+    while (low < high) {
+        const mid = Math.floor((high - low) / 2) + low;
+        // console.log('mid: ', mid);
+        /*
+        如果 mid 是偶数，mid ^ 1 就是 mid + 1；
+        如果 mid 是奇数，mid ^ 1 就是 mid - 1。
+        这样做的目的是检查 mid 位置的元素是否与其邻居（左边或右边）的元素相同。
+        */ 
+        if (nums[mid] === nums[mid ^ 1]) {
+            low = mid + 1;
+        } else {
+            high = mid;
+        }
+        // console.info(low, high)
+    }
+
+    return nums[low];
+};
+```
 #### [142. 环形链表 II](https://leetcode.cn/problems/linked-list-cycle-ii/description/?envType=study-plan-v2&envId=bytedance-2023-spring-sprint)
 
 之前用hash表记录的方式实现过，对于要求使用O(1)空间，最直接想到的就是快慢指针了，这次也是，在ptr为什么等于相遇后慢指针走到环首存在推理疑问。
