@@ -2,7 +2,7 @@
 title: 手写面试题
 date: 2024-06-08T07:47:40.000Z
 draft: false
-tags: ['手写']
+tag: ['手写面试题', 'js']
 ---
 
 ### 手写Instanceof
