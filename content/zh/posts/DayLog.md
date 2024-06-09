@@ -3,12 +3,88 @@ title: 日记
 date: 2024-06-03
 draft: true
 ---
+### 2024-06-09
+#### [142. 环形链表 II](https://leetcode.cn/problems/linked-list-cycle-ii/description/?envType=study-plan-v2&envId=bytedance-2023-spring-sprint)
+
+之前用hash表记录的方式实现过，对于要求使用O(1)空间，最直接想到的就是快慢指针了，这次也是，在ptr为什么等于相遇后慢指针走到环首存在推理疑问。
+
+终于是断断续续的搞明白了。
+##### ptr指针能和show指针相遇在环首节点
+假设：
+- 快节点是慢节点的2倍步长
+- head到环首节点距离为A
+- 环首节点到快慢指针相遇点的距离为B
+- 相遇节点重新回到环首节点，环剩余的距离为C
+- 相遇后ptr以1步长开始走
+
+也就是有结论：
+- 环长度：B + C
+- 慢指针在相遇时候走过的长度：A + B
+- 快指针在相遇时候走过的是：A + B + n(B + C)；n圈
+
+得到公式：2倍慢指针走过的长度 = 快指针走过的长度   
+`2(A + B) = A + B + n(B + C)`    
+`A + B = n(B + C)`    
+`A = n(B + C) - B`    
+下一步确实是没想到的    
+`A = (n - 1)(B + C) + C`    
+到这里，可能会陷入圈数想不明白。其实圈数不要紧，几圈都可以，可以假设`n = 1`，慢指针不用绕圈就能和ptr在环首节点相遇`A = 0*(B + C) + C`，或者`A`距离更长，`n > 1`。也没有太大关系，慢指针在绕圈之后，也还是出现在同样的地方。也就满足了`A = C`。
+
+##### 慢指针为什么没绕圈
+假设是同时出发，最晚能在慢指针绕半圈的时候，快指针能套圈慢指针。    
+假设快指针慢一步，则下一步就追上了。   
+同理，落到这个区间的范围内，慢指针走过更少的步数，快指针就能追上。   
+因为是2倍步数，不会出现套圈后跳过慢指针的情况。
+
+```ts
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     val: number
+ *     next: ListNode | null
+ *     constructor(val?: number, next?: ListNode | null) {
+ *         this.val = (val===undefined ? 0 : val)
+ *         this.next = (next===undefined ? null : next)
+ *     }
+ * }
+ */
+
+function detectCycle(head: ListNode | null): ListNode | null {
+    if (head === null) return null;
+
+    let showPointer = head;
+    let fastPointer = head;
+
+    while (fastPointer !== null) {
+        if (
+            showPointer?.next === null
+            || fastPointer?.next === null
+            || fastPointer?.next?.next === null
+        ) {
+            return null;
+        }
+        showPointer = showPointer?.next;
+        fastPointer = fastPointer?.next?.next;
+
+        if (showPointer === fastPointer) {
+            let ptr = head;
+            while (ptr !== showPointer) {
+                ptr = ptr.next;
+                showPointer = showPointer.next;
+            }
+            return ptr;
+        }
+    }
+
+    return null;
+};
+```
+
 ### 2024-06-08
 #### [LCR 010. 和为 K 的子数组](https://leetcode.cn/problems/QTMn0o/description/?envType=study-plan-v2&envId=bytedance-2023-spring-sprint)
 又刷到这个题了。
 
 #### [全排列 II](https://leetcode.cn/problems/permutations-ii/description/?envType=study-plan-v2&envId=bytedance-2023-spring-sprint)
-
 ```ts
 function permuteUnique(nums: number[]): number[][] {
     if (nums.length === 1) return [nums];
@@ -30,6 +106,8 @@ function permuteUnique(nums: number[]): number[][] {
     return all;
 };
 ```
+
+今天复习了会儿，想着在院子里帮忙干会儿活，顺便休息休息。结果刚出来没多会儿，有三蹦子duang！—— 的撞我的03车屁股上来了，我还以为是三蹦子爆胎了，隔着好几十米呢。结果也顾不上腿伤，这三蹦子就要跑，啊，给我气的，撒开丫子就冲过去。
 
 ### 2024-06-07
 #### [有序数组的平方](https://leetcode.cn/problems/squares-of-a-sorted-array/description/?envType=study-plan-v2&envId=bytedance-2023-spring-sprint).
