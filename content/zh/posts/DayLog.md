@@ -2,7 +2,262 @@
 title: 日记
 date: 2024-06-03
 draft: true
+weight: 1
 ---
+### 2024-06-12
+#### [121. 买卖股票的最佳时机 - 简单](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/description/?envType=study-plan-v2&envId=bytedance-2023-spring-sprint)
+今天刚从十渡出来，还收拾搬家东西，略忙。把简单题给刷了，这个题很好想，除了暴力以外，在观察下，遍历过的数据段中，里面的最小值到里面的最大值之间的差就是最大的，后续如果出现更小值和更大值，他们之间的差会更大，如果只出现最小值，不一定会有更大的差值。
+
+用个例子说明更直接：`[7,5,3,4,6,1,2]`。
+- 最大差肯定出现在最小值和后面的最大值之中。
+- 最大的段时[3,4,6]
+- 后续出现了更小值1, 但无更大值了
+- 如果后续增加元素8，[7,5,3,4,6,1,2,8]
+- 则满足最前面的条件，[1,8]
+
+
+```ts
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit = function(prices) {
+    let highestPrice = 0;
+    let minValue = Infinity;
+    for(let i = 0; i < prices.length; i++) {
+        if (prices[i] < minValue) {
+            minValue = prices[i];
+        } else {
+            highestPrice = Math.max(highestPrice, (prices[i] - minValue));
+        }
+    }
+
+    return highestPrice;
+};
+```
+#### [394. 字符串解码](https://leetcode.cn/problems/decode-string/description/?envType=study-plan-v2&envId=bytedance-2023-spring-sprint)
+用栈就好了。
+```ts
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var decodeString = function(s) {
+    const stack = [];
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] === ']') {
+            let str = '';
+
+            let popVal = stack.pop();
+            while(stack.length > 0 && popVal !== '[') {
+                str = popVal + str;
+                popVal = stack.pop();
+            }
+
+            if (popVal === '[') {
+                let numStrPopVal = '';
+                while (
+                    stack.length > 0
+                    && !isNaN(
+                        stack[stack.length - 1]
+                    )
+                ) { // 栈顶是数字字符
+                    numStrPopVal = stack.pop() + numStrPopVal;
+                }
+                let repushStr = '';
+                for (let j = 0; j < Number(numStrPopVal); j ++) {
+                    repushStr = repushStr + str;
+                }
+                stack.push(repushStr);
+            }
+        } else {
+            stack.push(s[i]);
+        }
+    }
+
+    let res = '';
+    while (stack.length > 0) {
+        res = stack.pop() + res;
+    }
+
+    return res;
+};
+```
+### 2024-06-11
+#### [143. 重排链表](https://leetcode.cn/problems/reorder-list/description/?envType=study-plan-v2&envId=bytedance-2023-spring-sprint)
+想到用线性表存储所有节点，按照双指针的移动重构链表。空间复杂度O(n)，时间复杂度O(2n)。
+也想到了快慢找中点，翻转后合并。时间也是O(kn)，定义指针的空间O(1)。
+结果在比划比划的，突发奇想用了个双向链表。空间复杂度O(n)，时间复杂度O(2n)。
+```ts
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {void} Do not return anything, modify head in-place instead.
+ */
+var reorderList = function(head) {
+    let newHead = head;
+    while (newHead.next) {
+        const next = newHead.next;
+        if (next) {
+            next.prev = newHead;
+        }
+        newHead = newHead.next;
+    }
+    let newTail = newHead; // 找到尾节点，同时给所有节点增加prev指针
+    newHead = head;
+
+    let headToTail = true;
+    while (newHead.next && newTail.prev) {
+        if (headToTail) {
+            const oldNext = newHead.next;
+            newHead.next = newTail;
+            oldNext.prev = null; // 成为新头
+            newHead = oldNext;
+        } else {
+            const oldPrev = newTail.prev;
+            newTail.next = newHead;
+            newTail.prev = null;
+            oldPrev.next = null;
+            newTail = oldPrev;
+        }
+        headToTail = !headToTail;
+    }
+
+    return head;
+};
+```
+#### [503. 下一个更大元素 II](https://leetcode.cn/problems/next-greater-element-ii/description/?envType=study-plan-v2&envId=bytedance-2023-spring-sprint)
+单调栈的应用。
+
+（暴力）最简单直观，对于每个元素，我们都循环去查找下一个最大值。最不理想的情况下时间复杂度O(n^2)。
+
+在这个循环中，意味着更大的元素有可能出现在前面，最好能够“回头找”，并且直接的逻辑思路就是拿着当前的元素去找下个值。
+
+如果有个结构，能让我们存储`index = i`到找到下个最大值`index = j`之间的所有元素，那么出现在中间的元素，它们的下个最大，肯定是`index = j`的这个元素。
+再分成一段段来看，`i ... j`之间，如果有再次满足上面这个条件的`i + x1 ... j - x2`， `j - x2`是这个区间的所有元素下个最大值，它们找到了归宿。
+
+就能免去`i ... j`，`i - 1 ... j`等之间很多重复的对比。     
+
+这个结构很自然而然的，就可以想到了栈，并且是自发形成的单调栈，最小的在栈顶。
+
+这道题因为最后的值压栈之后，只能循环对比，线性的增长nums即可。
+```ts
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var nextGreaterElements = function(nums) {
+    const n = nums.length;
+    const stack = [];
+    const result = new Array(n).fill(-1);
+    for(let i = 0; i < n * 2; i++) {
+        while (
+            stack.length > 0 // 出栈的前提
+            && nums[i % n] > nums[
+                stack[ stack.length - 1 ] // 栈顶的index
+            ] // 栈顶的值
+        ) {
+            // 当前值比栈顶值大，说明栈顶index的下一个最大值是当前值
+            result[stack.pop()] = nums[i % n];
+        }
+
+        stack.push(i % n) // 存index
+    }
+
+    return result;
+};
+
+```
+
+### 2024-06-10
+#### [78. 子集](https://leetcode.cn/problems/subsets/description/?envType=study-plan-v2&envId=bytedance-2023-spring-sprint)
+想到用回溯方法，但写不出来，最后连暴力都懒得写了，就参考了题解。
+```ts
+function subsets(nums: number[]): number[][] {
+    const res = [];
+    function backtrack(start, path) {
+        res.push([ ...path ]);
+        for(let i = start; i < nums.length; i++) {
+            path.push(nums[i]);
+            backtrack(i +1, path);
+            path.pop();
+        }
+    }
+
+    backtrack(0, []);
+    return res;
+};
+```
+这种题同时让我想起了之前的全排列，没有用回溯的办法。这里重新写了一遍。
+#### [46. 全排列](https://leetcode.cn/problems/permutations/?company_slug=bytedance)
+这里不需要缩减个数，push的时机也不一样。
+```ts
+function permute(nums: number[]): number[][] {
+    // 需要快速判断没有使用的
+    const used = new Array(nums.length).fill(false);
+    const res = [];
+
+    const backtrack = function(path) {
+        if (path.length === nums.length) {
+            res.push([ ...path ]);
+            return;
+        }
+
+        for(let i = 0; i < nums.length; i++) {
+            if (!used[i]) {
+                path.push(nums[i]);
+                used[i] = true;
+                backtrack(path);
+                used[i] = false;
+                path.pop();
+            }
+        }
+    }
+    backtrack([]);
+    
+    return res;
+};
+```
+#### [47. 全排列 II](https://leetcode.cn/problems/permutations-ii/description/?envType=study-plan-v2&envId=bytedance-2023-spring-sprint)
+全排列2会出现重复的内容，想的是利用排序logn，再判断前一个元素是否一致来跳过重复项。
+```ts
+function permuteUnique(nums: number[]): number[][] {
+    nums = nums.sort((a, b) => a - b);
+
+    const used = new Array(nums.length).fill(false);
+    const res = [];
+    const backtrack = function(path) {
+        if (path.length === nums.length) {
+            res.push([ ...path ]);
+            return;
+        }
+
+        let lastpop = null;
+        for(let i = 0; i < nums.length; i ++) {
+            // 相同的必须跳过
+            if (nums[i] === lastpop) continue;
+            if (path.length === 0 && i > 0 && nums[i] === nums[i - 1]) continue;
+            if (!used[i]) {
+                used[i] = true;
+                path.push(nums[i]);
+                backtrack(path);
+                lastpop = path.pop();
+                used[i] = false;
+            }
+        }
+    }
+
+    backtrack([]);
+    return res;
+};
+```
+
 ### 2024-06-09
 #### [LCR 070. 有序数组中的单一元素](https://leetcode.cn/problems/skFtm2/description/?envType=study-plan-v2&envId=bytedance-2023-spring-sprint)
 第一解：用了双指针。O(n)的复杂度。
