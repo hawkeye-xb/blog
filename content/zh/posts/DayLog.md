@@ -4,6 +4,190 @@ date: 2024-06-03
 draft: true
 weight: 1
 ---
+### 2024-06-14
+#### [32. 最长有效括号](https://leetcode.cn/problems/longest-valid-parentheses/description/?envType=study-plan-v2&envId=bytedance-2023-spring-sprint)
+有尝试记录。在和斌斌喝完酒之后，这次硬着头皮，用栈的方法给解了，虽然仅击败了5%，反正比之前尝试使用dp去处理没写出来好。
+
+#### [763. 划分字母区间](https://leetcode.cn/problems/partition-labels/description/?envType=study-plan-v2&envId=bytedance-2023-spring-sprint)
+有需要重复遍历的内容，初始想法考虑能不能使用栈，结果不合适。接着想了想滑动窗口，区间值从区间尾部遍历即可，优化了下就成了以下解。
+
+从题的角度出发，`a ~ last a` 之间，如果没有出现新的右侧大于这个区间的，那么范围就是 `[a ~ last a]`，如果区间内出现了，则是 `[a ~ last a ~ new max]`。这就很好处理了，遍历一遍，把所有字符的最右侧index存下来，重新遍历字符的区间，如果区间和当前相等，那就是只有一个该字符，如果不相等（不会出现小于的情况），则判断获取区间内**动态**的最大值。循环这个过程即可。
+
+虽然不知道贪心为何物，也可以想出些较优解来。
+```ts
+function partitionLabels(s: string): number[] {
+    const result = [];
+
+    const map = new Map();
+    for(let i = 0; i < s.length; i++) {
+        map.set(s[i], i);
+    }
+    let startIndex = 0;
+    while(startIndex < s.length) {
+        let maxIndex = map.get(s[startIndex]);
+        if (maxIndex === startIndex) {
+            result.push(1); // 长度1
+            startIndex++;
+        } else {
+            let i = startIndex + 1; // 从下一个开始
+            while (i < maxIndex) {
+                const nextValMaxIndex = map.get(s[i]);
+                maxIndex = Math.max(maxIndex, nextValMaxIndex);
+
+                i++;
+            }
+            result.push(maxIndex - startIndex + 1);
+            startIndex = maxIndex + 1;
+        }
+    }
+
+    return result;
+};
+```
+
+#### [54. 螺旋矩阵](https://leetcode.cn/problems/spiral-matrix/description/?envType=study-plan-v2&envId=bytedance-2023-spring-sprint)
+印象中写过，模拟遍历。更省空间的按照层级遍历。
+#### [LCR 062. 实现 Trie (前缀树)](https://leetcode.cn/problems/QC3q1f/description/?envType=study-plan-v2&envId=bytedance-2023-spring-sprint)
+```ts
+// type TrieNode = {
+//     val: string,
+//     child: Trie,
+// }
+let root = { value: '', children: new Map(), endedValue: false };
+class Trie {
+    constructor() {
+        root = { value: '', children: new Map(), endedValue: false };
+    }
+
+    insert(word: string): void {
+        let node = root;
+        for(let i = 0; i < word.length; i++) {
+            const value = word[i];
+            if (node.children.has(value)) {
+                node = node.children.get(value);
+            } else {
+                node.children.set(value, {
+                    value,
+                    children: new Map(),
+                });
+                node = node.children.get(value);
+            }
+        }
+
+        node.endedValue = true;
+
+        return null;
+    }
+
+    search(word: string): boolean {
+        let node = root;
+        for (let i = 0; i < word.length; i++) {
+            const value = word[i];
+            if (node.children.has(value)) {
+                node = node.children.get(value);
+            } else {
+                return false;
+            }
+        }
+        if (node.children.size > 0 && !node.endedValue) {
+            return false;
+        }
+
+        return true;
+    }
+
+    startsWith(prefix: string): boolean {
+        let node = root;
+        for (let i = 0; i < prefix.length; i++) {
+            const value = prefix[i];
+            if (node.children.has(value)) {
+                node = node.children.get(value);
+            } else {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
+
+/**
+ * Your Trie object will be instantiated and called as such:
+ * var obj = new Trie()
+ * obj.insert(word)
+ * var param_2 = obj.search(word)
+ * var param_3 = obj.startsWith(prefix)
+ */
+```
+### 2024-06-13
+#### [113. 路径总和 II](https://leetcode.cn/problems/path-sum-ii/description/?envType=study-plan-v2&envId=bytedance-2023-spring-sprint)
+路径上会有负数。
+```ts
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @param {number} targetSum
+ * @return {number[][]}
+ */
+var pathSum = function(root, targetSum) {
+    const result = [];
+    function getChildrenPath(node, prePath, currentSum) {
+        if (node === null) return;
+        const currPath = [...prePath, node.val];
+        currentSum += node.val;
+        if (node.left === null && node.right === null) {
+            if (currentSum === targetSum) result.push(currPath);
+        } else {
+            getChildrenPath(node.left, currPath, currentSum);
+            getChildrenPath(node.right, currPath, currentSum);
+        }
+    };
+    getChildrenPath(root, [], 0);
+    return result;
+};
+```
+#### [110. 平衡二叉树 - 简单](https://leetcode.cn/problems/balanced-binary-tree/description/?envType=study-plan-v2&envId=bytedance-2023-spring-sprint)
+ummm，🤦🏻‍♀️。高度差！
+```ts
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {boolean}
+ */
+var isBalanced = function(root) {
+    function getHeight(node) {
+        if (node === null) return 0; // 0高度
+        const leftHeight = getHeight(node.left);
+        const rightHeight = getHeight(node.right);
+        if (
+            leftHeight === -1
+            || rightHeight === -1
+            || Math.abs(leftHeight - rightHeight) > 1
+        ) {
+            // 如果是false的结果，这里先返回-1
+            return -1;
+        }
+
+        return Math.max(leftHeight, rightHeight) + 1;
+    }
+    return getHeight(root) !== -1;
+};
+```
+
 ### 2024-06-12
 #### [121. 买卖股票的最佳时机 - 简单](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/description/?envType=study-plan-v2&envId=bytedance-2023-spring-sprint)
 今天刚从十渡出来，还收拾搬家东西，略忙。把简单题给刷了，这个题很好想，除了暴力以外，在观察下，遍历过的数据段中，里面的最小值到里面的最大值之间的差就是最大的，后续如果出现更小值和更大值，他们之间的差会更大，如果只出现最小值，不一定会有更大的差值。
