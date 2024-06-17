@@ -35,6 +35,27 @@ handleSomethingUsePromise()
 这里面夹了行`last console`的私货，是因为之前和人辩论时候，以“码”说服了别人，印象较为深刻。
 [答案跳转](#答案)
 
+### 再来一题吧
+```js
+setTimeout(() => {
+    console.log(6)
+}, 0)
+
+new Promise((res, rej) => {
+    console.log(1)
+    for(var i = 0;i< 100; i++){
+        i == 4 && res(i)
+    }
+    console.log(2)
+})
+.then(console.log(3))
+.then(res => {
+    console.log(res)
+})
+
+console.log(5)
+```
+
 ### 手写
 Promise有三种状态，将then、catch接收的函数用数组保存起来，等到状态切换的时候，循环回调就好了。
 

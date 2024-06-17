@@ -4,6 +4,59 @@ date: 2024-06-03
 draft: true
 weight: 1
 ---
+### 2024-06-17
+#### Didi 一面
+ - [104. 二叉树的最大深度](https://leetcode.cn/problems/maximum-depth-of-binary-tree/description/)
+ - Instanceof 局限性，不确认是否因为blog写了这个函数的手写
+ - 跨端技术
+
+#### 顺带手把另一道简单给刷了: [111. 二叉树的最小深度](https://leetcode.cn/problems/minimum-depth-of-binary-tree/description/)
+因为搞不懂一道路径权重题。
+### 2024-06-16
+准备面试内容...
+今天没刷题QAQ，现在觉得还不如直接来几道中等题，都不想刷这堆面试题了。
+### 2024-06-15
+今天新租的房子可以入住了，去那儿煮了个🍜，一来一回早上6点到了下午3点多了。都没空刷题，路上还略微复习了下React Hook特性，有两年没写，都忘差不多了🤦🏻‍♀️。
+#### [213. 打家劫舍 II](https://leetcode.cn/problems/house-robber-ii/description/?envType=study-plan-v2&envId=bytedance-2023-spring-sprint)
+重用了[第一版的打家劫舍](#lcr-089-打家劫舍)，主要是懒🤦🏻‍♀️。分区段：
+- 包含[0]，则[0] + [2 ... (n -1)]区间的最大
+- 包含[n]，则[n] + [1 ... (n -2)]区间的最大
+- 都不包含，[1 ... n-1]的区间
+从中选择最大值。
+```ts
+function rob1(nums: number[]): number {
+    // 下面一版的打劫🤦🏻‍♀️
+};
+function rob(nums: number[]): number {
+    if (nums.length < 4) return Math.max(...nums);
+    if (nums.length === 4) return Math.max(nums[0] + nums[2], nums[1] + nums[3]);
+
+    const startZeroIndexMaxPrice = nums[0] + rob1(nums.slice(2, -1));
+    const haveEndIndexMaxPrice = nums[nums.length - 1] + rob1(nums.slice(1, -2));
+    const midMax = rob1(nums.slice(1, -1));
+
+    return Math.max(startZeroIndexMaxPrice, midMax, haveEndIndexMaxPrice);
+};
+```
+#### [LCR 089. 打家劫舍](https://leetcode.cn/problems/Gu0c2T/description/)
+冲力扣会员能加速？！这题都能击败100%？！
+```ts
+function rob(nums: number[]): number {
+    if (nums.length < 2) return Math.max(...nums);
+    
+    let maxPrice = Math.max(nums[0], nums[1]);
+    const maxPriceForIndex = new Array(nums.length);
+    maxPriceForIndex[0] = nums[0];
+    maxPriceForIndex[1] = maxPrice;
+
+    for (let i = 2; i < nums.length; i++) {
+        maxPrice = Math.max(maxPrice, nums[i] + maxPriceForIndex[i - 2]);
+        maxPriceForIndex[i] = maxPrice;
+    }
+
+    return maxPrice;
+};
+```
 ### 2024-06-14
 #### [32. 最长有效括号](https://leetcode.cn/problems/longest-valid-parentheses/description/?envType=study-plan-v2&envId=bytedance-2023-spring-sprint)
 有尝试记录。在和斌斌喝完酒之后，这次硬着头皮，用栈的方法给解了，虽然仅击败了5%，反正比之前尝试使用dp去处理没写出来好。
