@@ -4,10 +4,116 @@ date: 2024-06-03
 draft: true
 weight: 1
 ---
+### 2024-06-20
+早上起床继续收拾，还没收拾好，货拉拉就到了，风卷残云，麻溜的就搬东西回房山了，这一顿收拾，可真是累人。    
+但是话又说回来，七年时间，从昌平走到了房山。在附近遛弯的公园里面，我好像看到了生活。
+### 2024-06-19 星期三
+面试之后马不停蹄的就开始收拾屋子，各种封箱。停下来休息的时候才发现自己眼睛肿了🤦🏻‍♀️ 急忙去医院挂了个急诊，果然是麦粒肿，两年一次的循环了呗。我媳妇说这不是每次都是你换工作，着急上火了哈哈哈哈。   
+今天小03也回来了QAQ，没车可是太不方便了，短短一周，就打车花了我快两箱油了。
+#### 字节面试
+ - 带团队做的事情
+    - 非扁平的情况下
+    - 扁平的情况下
+ - 对于新技术的看法，团队同学接不住的情况怎么办？
+    - 选择Rust的原因
+ - 有什么主动push产品的地方吗？
+    - 客户端三方登录
+ - 在做AI相关内容的时候，有什么难点吗？
+ - CSS 重绘重排
+ - 微前端
+    - CSS 冲突怎么处理
+ - 算法题
+    - 最小堆
+ - 最近在做什么？
+### 2024-06-18
+#### [1631. 最小体力消耗路径](https://leetcode.cn/problems/path-with-minimum-effort/description/?envType=study-plan-v2&envId=bytedance-2023-spring-sprint)
+上一题没有参考意义🤦🏻‍♀️
+```ts
+function minimumEffortPath(heights: number[][]): number {
+    // 果然可以这么dp？0-0 到 dp[i][j]最小值。 方向呢？无后效不生效啊
+    // 二分查找一个值，这个值能够遍历通过，所有值不大于某个值
+
+    // 抄答案
+    const dirs = [[-1, 0], [1, 0], [0, -1], [0, 1]]; // 干嘛用的？四个方向移动的数据
+    
+    const m = heights.length, n = heights[0].length;
+    let left = 0, right = 999999, ans = 0;
+
+    while(left <= right) {
+        const mid = Math.floor((left + right) / 2);
+        const queue = [[0, 0]]; // 遍历的起点
+        const seen = new Array(m * n).fill(0); // 创建一个数组seen，用于记录每个格子是否被访问过，初始时所有格子都未被访问。
+        seen[0] = 1; // 标记起点[0, 0]已被访问。
+
+        while (queue.length) {
+            const [x, y] = queue.shift();
+            for(let i = 0; i < 4; i++) {
+                // 计算移动后的新坐标。
+                const nx = x + dirs[i][0];
+                const ny = y + dirs[i][1];
+
+                // 检查新坐标是否在网格内、未被访问过，并且与当前格子的高度差不超过mid
+                if (nx >= 0 && nx < m && ny >= 0 && ny < n && !seen[nx * n + ny] && Math.abs(heights[x][y] - heights[nx][ny]) <= mid) {
+                    queue.push([nx, ny]); // 如果满足条件，则将新坐标加入队列。
+                    seen[nx * n + ny] = 1; // 标记新坐标为已访问。
+                }
+            }
+        }
+
+        if (seen[m * n - 1]) {
+            // 如果终点被访问过，说明存在一条路径，其最大高度差不超过mid
+            ans = mid;
+
+            // 缩小查找范围
+            right = mid - 1;
+        } else {
+            // 如果终点未被访问过，说明最大高度差太小，无法到达终点。
+            // 缩小查找范围
+            left = mid + 1;
+        }
+    }
+
+    return ans;
+};
+```
+#### [LCR 099. 最小路径和](https://leetcode.cn/problems/0i0mDW/description/)
+只有两个方向，所以很容易dp、
+```ts
+function minPathSum(grid: number[][]): number {
+    // 都是上面和左边
+    const dp = new Array(grid.length).fill(0)
+        .map(() => new Array(grid[0].length).fill(0));
+    
+    dp[0][0] = grid[0][0];
+
+    for (let y = 0; y < grid.length; y++) {
+        let x = y === 0 ? 1 : 0;
+
+        for (; x < grid[y].length; x++) {
+            let min = Math.min(
+                y > 0 ? dp[y -1][x] : Infinity,
+                x > 0 ? dp[y][x -1] : Infinity
+            );                
+            dp[y][x] = min + grid[y][x];
+        }
+    }
+
+    // console.info(dp);
+
+    return dp[grid.length -1][grid[0].length -1];
+};
+```
+
+#### Didi 二面
+ - 项目
+ - 离职原因；这个要注意了。
+ - 跨端技术选型内容整理。注意这种问题应该是要问跨端技术对比，并且需要考虑人员因素。
 ### 2024-06-17
 #### Didi 一面
  - [104. 二叉树的最大深度](https://leetcode.cn/problems/maximum-depth-of-binary-tree/description/)
- - Instanceof 局限性，不确认是否因为blog写了这个函数的手写
+ - Instanceof 局限性。
+    - 无原型的时候
+    - Object.prototype.toString.call()
  - 跨端技术
 
 #### 顺带手把另一道简单给刷了: [111. 二叉树的最小深度](https://leetcode.cn/problems/minimum-depth-of-binary-tree/description/)

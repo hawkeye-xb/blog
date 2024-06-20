@@ -74,3 +74,6 @@ handleSomethingUsePromise then1, res : true
 request api promise finally
 handleSomethingUsePromise then2, res : xxx
 ```
+
+queueMicrotask、MutationObserver
+https://developer.mozilla.org/zh-CN/docs/Web/API/queueMicrotask
