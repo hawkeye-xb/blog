@@ -3,6 +3,7 @@ title: 手写面试题
 date: 2024-06-08T07:47:40.000Z
 draft: false
 tag: ['手写面试题', 'js']
+description: ''
 ---
 ### 手写call、apply、bind
 区别：
