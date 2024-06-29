@@ -1,14 +1,15 @@
 ---
-title: "99%手写的Promise都没法过的case"
+title: "99%手写的Promise，都没法过的case"
 date: 2024-06-29T07:47:40.000Z
 draft: false
 tag: ['手写面试题', 'js']
 ---
 <!-- 2024-06-13T07:47:40.000Z -->
-### 如题
 今儿个朋友在重构代码的时候，和我吐槽了如下题这么个代码。让判断下调用顺序，真是Promise写出了callback的感觉。    
-先不看答案，试试能不能看出来答案。   
-这道题可以说99%手写的promise都不能正确输出。（目前使用的是Google Chrome 125.0.6422.176 正式版本，arm64架构）。
+先不看答案，试试能不能解答正确。   
+这道题可以说99%手写的promise都不能正确输出。    
+答案由Google Chrome 控制台输出（目前使用的是 125.0.6422.176 正式版本，arm64架构）。
+### 如题
 ```js
 // file1
 function handleSomethingUsePromise() {
