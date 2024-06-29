@@ -39,6 +39,8 @@ params:
   buildBlogSeriesOpeningRemarks: "    \n大家好。    \n今天接着研究个人站长探索之博客搭建。"
   flutterSeriesName: "Flutter 系列"
 
+  struggleWomanName: "XT"
+
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   # title: Hawkeye-xb Blog
   comments: true # 启用评论模块
