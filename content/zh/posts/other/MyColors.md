@@ -6,4 +6,3 @@ descritpion: '对于互联网产品的独立开发者、中小微企业，如何
 categories:
   - other
 ---
-移动APP开发技术选型
