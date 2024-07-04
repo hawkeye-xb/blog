@@ -83,7 +83,8 @@ weight: 2
 既然在运行时候需要获取app.asar的内容，那么Electron是怎么做到的呢？找到[Electron package.json](https://github.com/electron/electron/blob/main/package.json)，devDependencies依赖了`"@electron/asar": "^3.2.1"`这个包，再去[npm搜索](https://www.npmjs.com/package/@electron/asar)，对应的是[github.com/electron/asar](https://github.com/electron/asar)远端项目。    
 
 当然，现在需要单独的处理asar，而不是在Electron下。找了下社区，就有方案，使用`asar`这个包即可，去[npm查看](https://www.npmjs.com/package/asar)，对应的同一个远端项目。这里就没问题，直接全局安装`npm install asar -g`。
-【图片】（）
+
+![asar npm address.png](https://s2.loli.net/2024/07/04/KjuQPeSpwWfiBDX.png)
 
 ### 解压asar
 这样我们就可以参照文档，尝试解压figma的asar了。
@@ -213,6 +214,7 @@ module.exports.readFilesystemSync = function (archive) {
 ```
 offset依旧是0，惊不惊喜意不意外~。
 
+<!-- xattr相关 -->
 ----
 
 **过程仅供交流学习**    
