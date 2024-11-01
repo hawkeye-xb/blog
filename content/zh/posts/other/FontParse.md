@@ -36,7 +36,7 @@ buffer.then(data => {
 
 ### Opentype源码阅读
 #### parseBuffer：解析的入口
-通过简单的调用入口，我们可以反查源码。传入文件的ArrayBuffer并返回Font结构的对象，当不清楚会有什么结构的时候，可以通过Font查看，当然了，直接consolelog查看更方便。
+通过简单的调用入口，我们可以反查源码。传入文件的ArrayBuffer并返回Font结构的对象，当不清楚会有什么结构的时候，可以通过Font查看，当然了，直接console.log查看更方便。
 ```js
 // Public API ///////////////////////////////////////////////////////////
 
@@ -71,7 +71,7 @@ export {
         throw new Error('Unsupported OpenType signature ' + signature);
     }
 ```
-还需要注意的是，`signature`的值是的获取。从指定偏移位置开始，读取 4 个字节的数据，并将每个字节转换为字符，最终返回一个 4 字符的字符串标签。
+还需要注意的是，`signature`的值是的获取。从指定偏移位置开始，读取4个字节的数据，并将每个字节转换为字符，最终返回一个4字符的字符串标签。
 ```js
 // Retrieve a 4-character tag from the DataView.
 // Tags are used to identify tables.
@@ -123,10 +123,12 @@ function getULong(dataView, offset) {
     return dataView.getUint32(offset, false);
 }
 ```
-留意到`tableEntries`获取的offset是从12开始的，而获取`numTables`是从4开始的，也仅仅是`getUnit16`。
+留意到`tableEntries`获取的offset是从12开始的，而获取`numTables`是从4开始的，也仅仅是`getUnit16`，也就是说4-12中间还会有别的信息。
 #### 表信息标准描述
-微软排版文档描述，[Microsoft Typography documentation: Organization of an OpenType Font](https://learn.microsoft.com/en-us/typography/opentype/otspec181/otff#organization-of-an-opentype-font)。
+这时候只能通过查看微软排版文档描述，[Microsoft Typography documentation: Organization of an OpenType Font](https://learn.microsoft.com/en-us/typography/opentype/otspec181/otff#organization-of-an-opentype-font)。
 ![Organization of an Opentype Font.png](https://s2.loli.net/2024/08/07/VhS8GrNTDQ3Aenw.png)
+按照8bit计算，这些信息之后，刚好是在12个字节开始。
+
 后续的描述就是`parseOpenTypeTableEntries`的结构信息了。
 
 #### 表入口数据
@@ -179,7 +181,9 @@ function parseLtagTable(data, start) {
 创了`p`这个`Parser`实例，包含各种长度`parseShort`、`parseULong`等。自动移动offset，避免每次手动传入位置。获取了table的version信息，而后就是循环的获取表内容了。找了好些个字体，都没有ltag表🤦🏻‍♀️
 
 #### 解析小结
-这里我们可以初步的了解到整个字体的解析过程，如需获取最终字形信息，可能需要经过多个表联合查询，比如loca获取字形数据的偏移量，glyf获取字形数据，又或者camp获取字符代码对应的字形索引。
+这里我们可以初步的了解到整个字体的解析过程，就是按照约定的顺序，有个线头般一点儿一点儿的找到所需，只储存了数据。
+
+如需获取最终字形信息，可能需要经过多个表联合查询，比如loca获取字形数据的偏移量，glyf获取字形数据，又或者camp获取字符代码对应的字形索引。
 
 ### TTC字体集合的解析
 回到前面提出的，ttc字体集合，应该怎么解析呢？参照文档对字体集合的处理 [Font Collections](https://learn.microsoft.com/en-us/typography/opentype/otspec181/otff#font-collections)，相信大家已经有办法解析了。

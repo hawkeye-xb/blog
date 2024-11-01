@@ -68,19 +68,27 @@ Function.prototype.myBind = function(context, ...args) {
 ### 手写Instanceof
 instanceof 运算符用于检测构造函数的 prototype 属性是否出现在某个实例对象的原型链上。
 ```js
-function myInstanceof(left, right) {
-  // 如果 left 不是对象，直接返回 false
-  if (typeof left !== 'object' || left === null) return false;
-  // 获取left对象的原型;
-  let proto = Object.getPrototypeOf(left)
-  // 构造函数的 prototype 对象是否在对象的原型链上
-  while (true) {
-    if (!proto) return false;
-    if (proto === right.prototype) return true;
+function myInstanceof(obj, constructor) {
+  // 如果 obj 是 null 或 undefined，直接返回 false
+  if (obj === null || obj === undefined) {
+    return false;
+  }
 
-    // 如果没有找到，就继续从其原型上找，Object.getPrototypeOf方法用来获取指定对象的原型
+  // 获取对象的原型
+  let proto = Object.getPrototypeOf(obj);
+
+  // 遍历原型链
+  while (proto !== null) {
+    // 如果找到了构造函数的 prototype 属性，返回 true
+    if (proto === constructor.prototype) {
+      return true;
+    }
+    // 继续向上查找原型链
     proto = Object.getPrototypeOf(proto);
   }
+
+  // 如果遍历完原型链都没有找到，返回 false
+  return false;
 }
 
 ```
