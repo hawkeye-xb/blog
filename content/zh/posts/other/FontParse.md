@@ -3,7 +3,6 @@ title: 用了这么多年的字体，你知道它是怎么解析的吗？
 date: 2024-08-06
 draft: false
 descritpion: '对字体相关内容学习的整理'
-weight: 1
 categories:
   - other
 ---
