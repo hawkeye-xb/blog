@@ -83,7 +83,7 @@ App.vue 随便写些内容。
 ### Vue 文件不被 TS 识别
 如：找不到模块“./App.vue”或其相应的类型声明。
 ```shell
-npm install vue-tsc
+npm install vue-tsc @vue/cli-plugin-typescript
 ```
 配置tsconfig
 ```json
