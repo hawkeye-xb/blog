@@ -2,7 +2,7 @@
 title: Electron-forge + Vite + Typescript + Vue3 初始化项目
 date: 2024-11-07
 draft: false
-descritpion: ''
+descritpion: '使用Electron-forge + Vite + Typescript + Vue3 初始化项目所需要的一些简单配置。'
 categories: ['Electron']
 tags: ['Electron-forge', 'Vite', 'Typescript', 'Vue3']
 series: ['我的网盘']
