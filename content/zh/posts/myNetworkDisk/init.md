@@ -2,7 +2,7 @@
 title: Electron-forge + Vite + Typescript + Vue3 初始化项目
 date: 2024-11-07
 draft: false
-descritpion: ''
+descritpion: '使用Electron-forge + Vite + Typescript + Vue3 初始化项目所需要的一些简单配置。'
 categories: ['Electron']
 tags: ['Electron-forge', 'Vite', 'Typescript', 'Vue3']
 series: ['我的网盘']
@@ -83,7 +83,7 @@ App.vue 随便写些内容。
 ### Vue 文件不被 TS 识别
 如：找不到模块“./App.vue”或其相应的类型声明。
 ```shell
-npm install vue-tsc
+npm install vue-tsc @vue/cli-plugin-typescript
 ```
 配置tsconfig
 ```json
