@@ -33,7 +33,9 @@ menu:
 params:
   homeInfoParams:
     Content: >
-      👋 欢迎来到Hawkeye-xb 的博客儿!
+      👋 欢迎来到Hawkeye-xb 的博客儿! <br />
+      [P-Pass File](https://p-pass-file-website.deno.dev/): 基于 WebRTC 的文件传输工具。<br />
+      [Copy Checklist](https://copy-checklist-hxb.deno.dev/): 可以创建副本的确认清单。<br />
 
   buildBlogSeriesName: "五分钟系列"
   buildBlogSeriesOpeningRemarks: "    \n大家好。    \n今天接着研究个人站长探索之博客搭建。"
