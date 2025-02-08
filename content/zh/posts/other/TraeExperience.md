@@ -1,7 +1,7 @@
 ---
 title: Trae 纯黑盒开发体验，半天确实够完成一款APP
 date: 2025-02-06
-draft: true
+draft: false
 descritpion: '对于 Trae AI 编程工具的一些体验和思考。分别使用了 Web 端、Flutter 跨平台端、Swift 原生端的语言，以黑盒的方式来开发项目，对 Trae 工具的使用和模型遇到的问题做简单的总结。'
 categories:
   - other
