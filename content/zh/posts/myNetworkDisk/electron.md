@@ -1,10 +1,10 @@
 ---
-title: Electron + Webpack + Typescript 客户端项目
+title: Electron 客户端项目从搭建到分发的全流程（含pipeline）
 date: 2025-02-04
 draft: false
-descritpion: '使用 Webpack + Typescript 从零构建 Electron 项目，按需使用依赖。文章介绍了为啥需要自己搭建架子，与当前客户端实现的模块关系。'
+descritpion: '利用 Electron、Webpack 和 TypeScript 构建客户端项目。从依赖安装到项目分发，每个步骤都为你剖析到位，助你轻松应对开发难题'
 categories: ['Electron']
-tags: ['Electron', 'Webpack', 'Typescript', 'Vue3']
+tags: ['Electron', 'Webpack', 'Typescript']
 series: ['P-Pass File']
 ---
 最近在开发基于 WebRTC 做数据传输的文件管理工具，[P-Pass File](https://p-pass-file-website.deno.dev/) 需要对本地文件做读写操作，大量的操作干脆就直接以本地服务的方式去处理了。
@@ -26,7 +26,12 @@ if (MAIN_WINDOW_VITE_DEV_SERVER_URL) {
 ```
 在得到项目管理上的方便的同时，也相应的需要更多初始化配置、依赖的兼容。
 
-所以在做权衡之后，将 electron 与渲染进程分离。electron 作为类服务端的一个启动器、进程管理器，通过 preload 注入 apis；渲染进程当做 web 项目开发，通过 preload 环境参数区分接口调用，前期还能通过直接 loadURL 访问远端资源，达到更快速的项目迭代。
+所以在做权衡之后，将 electron 与渲染进程分离。electron 作为类服务端的一个启动器、进程管理器，更方便的隔离和选择技术栈。通过 preload 注入 apis；渲染进程当做 web 项目开发，通过 preload 环境参数区分接口调用，前期还能通过直接 loadURL 访问远端资源，达到更快速的项目迭代。
+<a href="/images/other/p-pass-file/electron.png" data-lightbox="electron" data-title="electron">
+  <img src="/images/other/p-pass-file/electron.png" alt="chat1">
+</a>
+
+
 #### 项目搭建
 初始化项目
 首先，创建一个新的项目目录并初始化 package.json。
@@ -180,12 +185,6 @@ contextBridge.exposeInMainWorld('electron', {
 ├── package-lock.json
 ├── package.json
 ├── release
-│   ├── P-Pass File-1.0.0-arm64.dmg
-│   ├── P-Pass File-1.0.0-arm64.dmg.blockmap
-│   ├── builder-debug.yml
-│   ├── builder-effective-config.yaml
-│   ├── latest-mac.yml
-│   └── mac-arm64
 ├── src
 │   ├── ipcListeners.ts
 │   ├── main.ts
@@ -196,5 +195,91 @@ contextBridge.exposeInMainWorld('electron', {
 └── webpack.config.js
 ```
 
-### 项目分发
-将所需的 Node 服务构建输出到 Webpack 配置的 ` { from: './src/server', to: 'server' } ` 中，配置 icons 后在本地打包 dmg。将其上传至 Github Release，即可进行下载分发，整体对应的 CICD 这里就先不给出了。
+### 项目构建与分发
+将所需的 Node 服务构建输出到 Webpack 配置的 ` { from: './src/server', to: 'server' } ` 中，配置 icons 后在本地打包 dmg。将其上传至 Github Release，即可进行下载分发。
+
+#### 环境初始化、定义构建的平台、Node 版本等
+```yml
+name: Build and Release Electron App
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest]
+        
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js and npm
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.19.0'
+          npm-version: '10.2.3'
+```
+#### 构建依赖的服务
+前面说了，这里依赖了另外的服务资源，需要优先打包，不直接使用产物的原因是避免构建Node版本不一致等问题。
+使用同样的授权 `secrets.AUTH_TOKEN` token，克隆仓库，安装依赖，构建服务。   
+PS：Window 平台下的 Path 处理格式。
+```yml
+# 构建服务端依赖
+      - name: Build Server Dependency
+        shell: bash
+        run: |
+          echo "Cloning server repository..."
+          git clone https://x-access-token:${{ secrets.AUTH_TOKEN }}@github.com/hawkeye-xb/p-pass-file-server.git temp-server
+          cd temp-server
+          
+          echo "Installing dependencies..."
+          npm install --no-audit --no-fund --include=dev
+          
+          echo "Rebuilding native modules..."
+          npm rebuild
+          
+          echo "Building server..."
+          npx cross-env NODE_ENV=production node esbuild.config.js && node copy-node-files.js
+          
+          echo "Copying build artifacts..."
+          cd ..
+          mkdir -p src/server
+          if [ "$RUNNER_OS" == "Windows" ]; then
+            cp -r temp-server/dist/* src/server/ 2>/dev/null || powershell -Command "Copy-Item 'temp-server/dist/*' -Destination 'src/server' -Recurse -Force"
+          else
+            cp -r temp-server/dist/* src/server/
+          fi
+          
+          rm -rf temp-server
+        env:
+          GIT_TERMINAL_PROMPT: 0
+          CI: true
+          NODE_ENV: production
+```
+之后就是常规的 Electron 构建任务了。
+#### 上传
+这里多给出上传的代码，会将 `latest.yml`、`.blockmap` 自动更新需要的资源也上传到 Release 中。
+```yml
+      - name: Upload Release Assets
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: |
+            release/*-win-x64.exe
+            release/*-mac-x64.dmg
+            release/*-mac-arm64.dmg
+          draft: false
+          prerelease: ${{ contains(github.ref, '-beta') || contains(github.ref, '-alpha') }}
+          name: Release ${{ github.ref_name }}
+          tag_name: ${{ github.ref_name }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.AUTH_TOKEN }}
+```
+
+[完整的 CICD 文件查看](https://github.com/hawkeye-xb/p-pass-file-electron-client/blob/main/.github/workflows/electron-build.yml)
