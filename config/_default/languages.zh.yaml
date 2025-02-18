@@ -34,6 +34,7 @@ params:
   homeInfoParams:
     Content: >
       👋 欢迎来到Hawkeye-xb 的博客儿! <br />
+      [https://grps.hawkeye-xb.xyz/](https://grps.hawkeye-xb.xyz/): GitHub Release API 代理服务，避免 GitHub API 访问限制。<br />
       [P-Pass File](https://p-pass-file-website.deno.dev/): 基于 WebRTC 的文件传输工具。<br />
       [Copy Checklist Web](https://copy-checklist-hxb.deno.dev/): 可以创建副本的确认清单。<br />
       [Minesweeper](https://hawkeye-minesweeper.deno.dev/): 扫雷小游戏。<br />
