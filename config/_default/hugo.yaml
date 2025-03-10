@@ -1,6 +1,6 @@
 baseURL: https://hawkeye-xb.xyz/
 title: Hawkeye-xb Blog
-paginate: 5
+# paginate: 5
 theme: ['PaperMod']
 
 enableInlineShortcodes: true
