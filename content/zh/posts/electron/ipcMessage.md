@@ -1,9 +1,11 @@
 ---
-title: IPC Electron 进程间通信
+title: 进程间通信 —— IPC
 date: 2025-03-12
 draft: false
 descritpion: ''
 categories:
+  - Electron
+series:
   - Electron
 ---
 
@@ -158,7 +160,9 @@ contextBridge.exposeInMainWorld('electronAPI', {
 [MessagePort 代码地址](https://github.com/hawkeye-xb/electron-learn/tree/main/ipc)
 
 ### 最后
-本篇简单的介绍了 Electron IPC 的基本概念和使用，知道其边界，能做和不能做的。希望有所帮助，想更深入了解可以查阅 Chromium 相关文档。
+本篇简单的介绍了 Electron IPC 的基本概念和使用，知道其边界，能做和不能做的。希望有所帮助，想更深入了解可以查阅相关文档。   
+
+ipcRenderer.sendTo 和 remote 模块都已被废弃，就不做介绍了。
 
 ### 参考和引用
 [Inter-process Communication (IPC)](https://www.chromium.org/developers/design-documents/inter-process-communication/)    
