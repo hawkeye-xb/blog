@@ -2,3 +2,4 @@
 *dist*
 *node_modules*
 apikeys.json
+# themes/* # 注释掉或删除这一行
