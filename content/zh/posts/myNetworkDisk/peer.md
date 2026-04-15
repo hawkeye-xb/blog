@@ -3,6 +3,7 @@ title: 使用 peer 实现 WebRTC 数据传输
 date: 2024-11-25
 draft: false
 descritpion: '介绍如何使用 Peer 实现 WebRTC 数据传输。'
+categories: ['前端开发']
 tags: ['WebRTC', 'Peer']
 series: ['我的网盘']
 ---

@@ -3,7 +3,7 @@ title: Vue 项目初始化
 date: 2025-01-05
 draft: true
 descritpion: '记录Vue项目初始化需要的配置'
-categories: ['Vue']
+categories: ['前端开发']
 tags: ['Vue3']
 series: ['我的网盘']
 ---

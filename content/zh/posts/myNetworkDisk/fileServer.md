@@ -3,7 +3,8 @@ title: koa 快速开发一个文件服务器
 date: 2024-11-13
 draft: false
 descritpion: '介绍了使用 koa 使用 ws 模块快速开发一个文件服务器。与碰到 Multer 无法获取 formData file 之外其他数据问题的解释。'
-tags: ['Multer', 'Node', 'Koa']
+categories: ['前端开发']
+tags: ['Node', 'Koa']
 series: ['我的网盘']
 ---
 
