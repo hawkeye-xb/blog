@@ -4,7 +4,10 @@ date: 2025-09-12
 draft: false
 descritpion: '聊聊 Figma MCP 和对 AI 时代前端开发的看法'
 categories:
-  - other
+  - AI
+tags:
+  - Figma
+  - MCP
 ---
 
 (在 2025-07-07 文档上修改)

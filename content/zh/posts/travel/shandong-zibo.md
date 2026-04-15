@@ -2,6 +2,9 @@
 title = '山东 zi~er博'
 date = 2024-04-24T17:07:31+08:00
 draft = true
+
+categories = ['旅行']
+tags = ['山东']
 +++
 
 大家好。

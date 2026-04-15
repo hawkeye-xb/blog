@@ -6,8 +6,8 @@ draft = true
 ShowReadingTime = true
 ShowWordCount = true
 
-categories = ['学习']
-tags = ['Electron', 'Figma', 'Figma功能']
+categories = ['设计']
+tags = ['Electron', 'Figma']
 series = ['学习和研究Figma']
 +++
 

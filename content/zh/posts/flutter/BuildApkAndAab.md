@@ -2,6 +2,9 @@
 title = '零基础实战Flutter：打包APK、AAB'
 date = 2024-04-04
 draft = false
+
+categories = ['Flutter']
+series = ['零基础实战Flutter']
 +++
 
 ## .apk和.aab 的区别

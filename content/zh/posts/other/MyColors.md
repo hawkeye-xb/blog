@@ -4,7 +4,9 @@ date: 2024-07-02
 draft: false
 descritpion: '对于当前互联网产品开发中，协调的颜色设计至关重要，甚至决定用户是否愿意主动使用产品。一些独立开发者、中小微企业，在没有设计师的时候，是否就无法拥有至少合理、方便使用的配色方案呢？更多...https://hawkeye-xb.xyz/zh/posts/other/mycolors/'
 categories:
-  - other
+  - 设计
+tags:
+  - 配色
 ---
 
 对于当前互联网产品开发中，协调的颜色设计至关重要，甚至决定用户是否愿意主动使用产品。一些独立开发者、中小微企业，在没有设计师的时候，是否就无法拥有至少合理、方便使用的配色方案呢？当然不了。我们可以使用很多现成的组件库，解决方案等等，但是如果在不引入组件库的时候呢？[material-color-utilities](https://github.com/material-foundation/material-color-utilities?tab=readme-ov-file)给我们提供了方案。

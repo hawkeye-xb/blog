@@ -6,7 +6,7 @@ ShowReadingTime: true
 ShowWordCount: true
 isCJKLanguage: true
 categories:
-  - 学习
+  - 设计
 tags:
   - Electron
   - Figma

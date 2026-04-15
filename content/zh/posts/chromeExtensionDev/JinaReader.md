@@ -3,10 +3,9 @@ title: 薅羊毛：使用kagi + r.jina.ai 浅浅的翻半拉墙
 date: 2024-05-27T02:09:26.000Z
 draft: false
 categories:
-  - other
+  - 前端开发
 tags:
-  - proxy
-  - free
+  - Chrome 插件
 series:
   - 薅羊毛
 ---

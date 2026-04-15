@@ -2,7 +2,8 @@
 title: "99%手写的Promise，都没法过的case"
 date: 2024-06-29T07:47:40.000Z
 draft: false
-tag: ['手写面试题', 'js']
+categories: ['前端面试']
+tags: ['手写题', 'JavaScript']
 ---
 <!-- 2024-06-13T07:47:40.000Z -->
 今儿个朋友在重构代码的时候，和我吐槽了如下题这么个代码。让判断下调用顺序，真是Promise写出了callback的感觉。    

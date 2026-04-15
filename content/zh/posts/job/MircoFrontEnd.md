@@ -2,6 +2,8 @@
 title: 微前端
 date: 2024-06-02
 draft: true
+categories: ['前端面试']
+tags: ['微前端']
 ---
 
 <!-- （直接找当时的PPT） -->

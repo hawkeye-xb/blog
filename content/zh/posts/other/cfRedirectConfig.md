@@ -4,7 +4,10 @@ date: 2025-07-23
 draft: false
 descritpion: ''
 categories:
-  - other
+  - 前端开发
+tags:
+  - Monorepo
+  - Cloudflare
 ---
 
 前端在 Monorepo 架构下（多HTML），难免是需要做静态资源的转发配置。    

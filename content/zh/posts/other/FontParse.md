@@ -4,7 +4,9 @@ date: 2024-08-06
 draft: false
 descritpion: '对字体相关内容学习的整理'
 categories:
-  - other
+  - 前端开发
+tags:
+  - 字体
 ---
 
 大家好呀。

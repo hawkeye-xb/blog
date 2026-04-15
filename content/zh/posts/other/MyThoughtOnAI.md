@@ -3,8 +3,8 @@ title = '短期不焦虑，长期需重视'
 date = 2024-05-04
 draft = true
 
-categories = ['AI', 'ChatGPT']
-series = ['零基础实战Flutter']
+categories = ['AI']
+series = ['AI and life']
 +++
 
 大家好。

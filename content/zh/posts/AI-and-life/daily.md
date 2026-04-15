@@ -4,7 +4,7 @@ date: 2025-07-20
 draft: true
 descritpion: ''
 categories:
-  - AI and life
+  - AI
 series:
   - AI and life
 ---

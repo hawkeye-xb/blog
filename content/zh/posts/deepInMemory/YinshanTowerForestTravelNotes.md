@@ -2,6 +2,8 @@
 title = '银山塔林游记'
 date = 2018-09-22
 draft = true
+
+categories = ['随笔']
 +++
 
 2018-09-22 北京 初秋 晴 风

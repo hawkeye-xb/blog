@@ -4,7 +4,9 @@ date: 2025-02-17
 draft: false
 descritpion: '使用 Trae 开发体验，半天完成 “扫雷” 小游戏。谈谈 AI 对前端开发的影响。'
 categories:
-  - other
+  - AI
+tags:
+  - Trae
 ---
 
 [Github 地址](https://github.com/hawkeye-xb/minesweeper?tab=readme-ov-file)    

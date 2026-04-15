@@ -2,6 +2,8 @@
 title: SPA对比MPA
 date: 2024-06-06
 draft: true
+categories: ['前端面试']
+tags: ['SPA']
 ---
 
 相较于传统被我们熟知的MPA（多页面应用），SPA（单页面应用）都有哪些优势呢？存在什么问题和怎么解决呢？

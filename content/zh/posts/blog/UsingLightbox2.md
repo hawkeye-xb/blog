@@ -2,6 +2,9 @@
 title: 五分钟搭建个人博客：使用lighbox预览图片
 date: 2024-06-03T06:47:40.000Z
 draft: false
+categories: ['博客搭建']
+tags: ['Hugo']
+series: ['五分钟搭建个人博客']
 description: '如何使用lightbox2为基于Hugo和PaperMod主题的个人博客添加图片预览功能。'
 ---
 

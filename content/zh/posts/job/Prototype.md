@@ -2,6 +2,8 @@
 title: 原型链
 date: 2024-06-07T07:47:40.000Z
 draft: false
+categories: ['前端面试']
+tags: ['JavaScript']
 ---
 原型链是JavaScript中实现继承和对象间属性共享的一种机制。
 

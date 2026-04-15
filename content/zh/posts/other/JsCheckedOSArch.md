@@ -3,7 +3,9 @@ title: 奇怪的知识：js如何判断系统架构
 date: 2024-06-03
 draft: false
 categories:
-  - other
+  - 前端开发
+tags:
+  - JavaScript
 ---
 
 ### 场景：点击按钮下载什么架构的客户端

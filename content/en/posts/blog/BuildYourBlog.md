@@ -5,9 +5,9 @@ draft: false
 ShowReadingTime: true
 ShowWordCount: true
 categories:
-  - blog
+  - 博客搭建
 tags:
-  - hugo
+  - Hugo
 series:
   - Build a personal blog in five minutes
 description: ' Discover the simplicity of building your personal blog with Hugo, Github, and Vercel. Learn how to set up your local environment on MacOS, create a new blog, and deploy it effortlessly. Customize your domain, integrate Google Analytics, and add a comment section with giscus. Start your blogging journey with ease and enjoy the freedom of sharing your thoughts with the world.'

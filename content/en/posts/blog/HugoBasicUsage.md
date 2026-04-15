@@ -5,9 +5,9 @@ draft: false
 ShowReadingTime: true
 ShowWordCount: true
 categories:
-  - blog
+  - 博客搭建
 tags:
-  - hugo
+  - Hugo
 series:
   - Build a personal blog in five minutes
 description: ' Description: Learn how to enhance your Hugo blog with multi-language support, welcome messages, social icons, and menu options. Discover the importance of content organization, search functionality, and taxonomy for a more user-friendly experience. Follow this guide to transform your blog from a simple article page to a fully-featured, engaging website.'

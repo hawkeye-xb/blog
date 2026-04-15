@@ -2,6 +2,8 @@
 title: js this 题目
 date: 2024-06-10T07:47:40.000Z
 draft: true
+categories: ['前端面试']
+tags: ['JavaScript']
 ---
 一个函数作为普通函数被调用（而不是作为对象的方法、通过 new 关键字、call、apply 或 bind 方法调用）时，在非严格模式下，函数内部的 this 将指向全局对象。在严格模式下，this 将是 undefined。这是 JavaScript 中 this 绑定的一个基本规则。
 

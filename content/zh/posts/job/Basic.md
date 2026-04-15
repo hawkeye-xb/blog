@@ -2,6 +2,8 @@
 title: 基础
 date: 2024-06-06
 draft: true
+categories: ['前端面试']
+tags: ['JavaScript']
 ---
 ## 内存
 ### 栈

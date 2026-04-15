@@ -1,9 +1,9 @@
 ---
 title: "Figma MCP 工具数据类型详解"
 date: 2024-12-21T10:00:00+08:00
-draft: ture
-tags: ["figma", "mcp", "design-to-code"]
-categories: ["other"]
+draft: true
+tags: ["Figma", "MCP", "design-to-code"]
+categories: ["设计"]
 ---
 （Created by AI）
 # Figma MCP 工具数据类型详解

@@ -2,6 +2,8 @@
 title: Vue相关
 date: 2024-06-07
 draft: true
+categories: ['前端面试']
+tags: ['Vue']
 ---
 ### SPA单页面应用 和MPA多页面应用的区别
 ### 为什么data属性是一个函数而不是一个对象？

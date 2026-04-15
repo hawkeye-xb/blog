@@ -2,6 +2,8 @@
 title: 浏览器渲染过程
 date: 2024-06-15
 draft: true
+categories: ['前端面试']
+tags: ['浏览器']
 ---
 
 从服务端获取HTML Doc之后。

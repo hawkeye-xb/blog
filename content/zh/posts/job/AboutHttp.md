@@ -2,6 +2,8 @@
 title: http相关
 date: 2024-06-02
 draft: false
+categories: ['前端面试']
+tags: ['HTTP']
 ---
 ### 三次握手四次挥手
 1. 客户端发起请求，携带请求序列号

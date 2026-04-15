@@ -3,7 +3,7 @@ title = '零基础实战Flutter：一些开发过程'
 date = 2024-04-03
 draft = false
 
-categories = ['flutter']
+categories = ['Flutter']
 series = ['零基础实战Flutter']
 +++
 

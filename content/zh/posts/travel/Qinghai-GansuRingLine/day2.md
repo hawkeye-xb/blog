@@ -3,8 +3,8 @@ title = '青海-甘肃环线：第二天'
 date = 2024-05-10T23:47:40+08:00
 draft = false
 
-categories = ['travel']
-tags = ['青海-甘肃', '旅游']
+categories = ['旅行']
+tags = ['青海-甘肃']
 series = ['青海-甘肃环线']
 +++
 

@@ -2,7 +2,8 @@
 title: 几个关于字体和Electron有趣的面试题
 date: 2024-10-10T07:47:40.000Z
 draft: false
-tag: ['面试', '字体', 'Electron']
+categories: ['前端面试']
+tags: ['面试', '字体', 'Electron']
 description: '探索字体与Electron的深度面试题：中英文空格习惯、字符编码、系统与APP字体差异、Electron跨平台构建、再编译原理及node-sass使用。深入解析前端技术背后的奥秘，提升面试竞争力。'
 ---
 经过这么些面试，对于所做过的字体和 Electron，要么不根据项目来问，直接就是 Vue 原理，要么就是前端八股，最多也就是几个简单的 Electron 使用的问题。没想到在非互联网大厂的面试，碰到几个非常有意思的问题。    

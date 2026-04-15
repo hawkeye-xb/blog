@@ -4,7 +4,10 @@ date: 2025-08-29
 draft: false
 descritpion: '关于 monorepo turborepo 库快速入门，官方文档总结'
 categories:
-  - other
+  - 前端开发
+tags:
+  - Monorepo
+  - Turborepo
 ---
 
 # Why Turborepo

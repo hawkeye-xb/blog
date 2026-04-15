@@ -2,7 +2,8 @@
 title: 从版号排序到手写Sort
 date: 2024-06-03
 draft: false
-tag: ['手写面试题', 'js']
+categories: ['前端面试']
+tags: ['手写题', 'JavaScript']
 ---
 
 ### 给版本号排序

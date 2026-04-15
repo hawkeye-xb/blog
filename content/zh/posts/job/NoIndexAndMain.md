@@ -2,7 +2,8 @@
 title: 关于面试
 date: 2024-10-30T07:47:40.000Z
 draft: true
-tag: ['面试']
+categories: ['随笔']
+tags: ['面试']
 description: ''
 ---
 

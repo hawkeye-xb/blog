@@ -7,8 +7,8 @@ draft = false
 ShowReadingTime = true
 ShowWordCount = true
 
-categories = ['blog']
-tags = ['hugo']
+categories = ['博客搭建']
+tags = ['Hugo']
 series = ['五分钟搭建个人博客']
 +++
 

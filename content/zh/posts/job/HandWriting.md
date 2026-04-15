@@ -2,7 +2,8 @@
 title: 手写面试题
 date: 2024-06-08T07:47:40.000Z
 draft: false
-tag: ['手写面试题', 'js']
+categories: ['前端面试']
+tags: ['手写题', 'JavaScript']
 description: ''
 ---
 ### 手写call、apply、bind

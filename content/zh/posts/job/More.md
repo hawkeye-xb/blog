@@ -2,6 +2,7 @@
 title: 汇总
 date: 2024-06-03
 draft: true
+categories: ['前端面试']
 ---
 ### 从应用场景去复习面试题
 

@@ -3,7 +3,9 @@ title: 开发属于自己的chrome插件
 date: 2024-05-30T02:09:26.000Z
 draft: true
 categories:
-  - other
+  - 前端开发
+tags:
+  - Chrome 插件
 ---
 
 大家好啊。
