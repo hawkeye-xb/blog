@@ -10,6 +10,11 @@ draft = false
 
 各端各语言多少都有接触，对SaaS下云、私有化也略有经验，主要奉行技术服务需求，合适才是最好的。
 
+## Projects
+
+- [Xisper](https://xisper-landing.hawkeye-xb.com/) — macOS 语音听写输入法
+- [Terminal-Hub](https://github.com/hawkeye-xb/Terminal-Hub) — 终端风格 Hugo 主题
+
 无论您是寻找应用实现最佳实践、技术方案，还是工具开发，即便是唠唠嗑，有什么能够帮助上您的，尽管与我(hawkeyexb.helper@gmail.com)联系。
 
 
