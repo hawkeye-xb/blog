@@ -1,0 +1,76 @@
+{
+  "articles": [
+    {
+      "title": "被 Cloudflare 封号了？只需要排查一个开关",
+      "url": "https://mp.weixin.qq.com/s/91OjqyIjMwnnzew3kvuUvw",
+      "sourceId": "wx_Mzg5NDA5NjY3Mw==_2247483823_1",
+      "category": "other",
+      "filePath": "content/zh/posts/other/Cloudflare.md",
+      "syncedAt": "2026-04-15T07:47:12.855Z"
+    },
+    {
+      "title": "产品定位：没有护城河，只有你趟过的那条路",
+      "url": "https://mp.weixin.qq.com/s/o7cX1sBb8vR7FR1bxwx1Sw",
+      "sourceId": "wx_Mzg5NDA5NjY3Mw==_2247483811_1",
+      "category": "AI-and-life",
+      "filePath": "content/zh/posts/AI-and-life/ProductPositioning.md",
+      "syncedAt": "2026-04-15T07:53:58.485Z"
+    },
+    {
+      "title": "我砍掉了让产品「更聪明」的所有功能",
+      "url": "https://mp.weixin.qq.com/s/FcBxg9aEAFsaCTdK5P7hFw",
+      "sourceId": "wx_Mzg5NDA5NjY3Mw==_2247483805_1",
+      "category": "AI-and-life",
+      "filePath": "content/zh/posts/AI-and-life/CutSmartFeatures.md",
+      "syncedAt": "2026-04-15T07:54:02.205Z"
+    },
+    {
+      "title": "没有最好的 ASR，只有死角和你最不重叠的那个",
+      "url": "https://mp.weixin.qq.com/s/VTVcNzDRlKu18xcIHGf6wA",
+      "sourceId": "wx_Mzg5NDA5NjY3Mw==_2247483801_1",
+      "category": "AI-and-life",
+      "filePath": "content/zh/posts/AI-and-life/ASR.md",
+      "syncedAt": "2026-04-15T07:54:05.896Z"
+    },
+    {
+      "title": "我花三个月复刻了个 $30/月 的产品，然后推翻了自己",
+      "url": "https://mp.weixin.qq.com/s/OwCAaDk1xvn-4YvZ3UeQJw",
+      "sourceId": "wx_Mzg5NDA5NjY3Mw==_2247483793_1",
+      "category": "AI-and-life",
+      "filePath": "content/zh/posts/AI-and-life/ThreeMonthsCopyProduct.md",
+      "syncedAt": "2026-04-15T07:54:09.816Z"
+    },
+    {
+      "title": "2GB内存跑小龙虾？劝你先看看这篇",
+      "url": "https://mp.weixin.qq.com/s/zYqn19yIWayvH8Mm0S8tUw",
+      "sourceId": "wx_Mzg5NDA5NjY3Mw==_2247483768_1",
+      "category": "AI-and-life",
+      "filePath": "content/zh/posts/AI-and-life/CrawfishOnLowMemory.md",
+      "syncedAt": "2026-04-15T07:54:13.631Z"
+    },
+    {
+      "title": "SaaS之后，还剩下什么？",
+      "url": "https://mp.weixin.qq.com/s/uqs-pnfwJmGwQZWR_anSWA",
+      "sourceId": "wx_Mzg5NDA5NjY3Mw==_2247483761_1",
+      "category": "AI-and-life",
+      "filePath": "content/zh/posts/AI-and-life/SaaS.md",
+      "syncedAt": "2026-04-15T07:54:17.238Z"
+    },
+    {
+      "title": "我把一个AI产品的商业逻辑推了五层，推到最后发现：中小创业者可能无路可走",
+      "url": "https://mp.weixin.qq.com/s/bQUC8aVFNfF3t4IKFpYWRA",
+      "sourceId": "wx_Mzg5NDA5NjY3Mw==_2247483756_1",
+      "category": "AI-and-life",
+      "filePath": "content/zh/posts/AI-and-life/AiBusinessLogic.md",
+      "syncedAt": "2026-04-15T07:54:20.908Z"
+    },
+    {
+      "title": "为什么别人AI越用越强？4个反复验证的心得",
+      "url": "https://mp.weixin.qq.com/s/ywhMaTJMXN_Jr1c1_PK0yw",
+      "sourceId": "",
+      "category": "AI-and-life",
+      "filePath": "content/zh/posts/AI-and-life/AiPromptTips.md",
+      "syncedAt": "2026-04-15T07:55:46.455Z"
+    }
+  ]
+}

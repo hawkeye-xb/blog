@@ -1,0 +1,22 @@
+# Blog Project Rules
+
+This is a Hugo blog. See CLAUDE.md for full documentation.
+
+## Key Workflow: Syncing WeChat Articles
+
+When the user says they published a new WeChat article, run:
+
+```bash
+node sync-wechat.js <article_url>
+```
+
+This handles everything: fetch, parse, categorize, dedup, and write to `content/zh/posts/`.
+
+## Project Structure
+
+- `content/zh/posts/{category}/` — Chinese posts organized by category
+- `content/en/` — English translations
+- `sync-wechat.js` — WeChat article sync script
+- `autoTranslate.js` — AI translation script
+- `hugo.toml` — Hugo config
+- `.sync-history.json` — Tracks synced articles for dedup
