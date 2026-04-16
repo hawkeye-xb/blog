@@ -7,8 +7,6 @@ weight: 2
 links:
   - name: "GitHub"
     url: "https://github.com/hawkeye-xb/Terminal-Hub"
-  - name: "Demo"
-    url: "https://hawkeye-xb.com"
 ---
 
 Terminal-Hub 是一个终端风格的 Hugo 主题，专为独立开发者设计。用它展示你的作品、文章和想法。
