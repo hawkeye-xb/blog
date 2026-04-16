@@ -7,8 +7,6 @@ weight: 3
 links:
   - name: "GitHub"
     url: "https://github.com/hawkeye-xb/fake-claude"
-  - name: "npm"
-    url: "https://www.npmjs.com/package/fake-claude"
 ---
 
 fake-claude 是一个趣味命令行工具，可以在你的终端中伪造 Claude Code 在工作。灵感来自 [genact](https://github.com/svenstaro/genact)。
